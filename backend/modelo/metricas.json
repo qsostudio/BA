@@ -1,0 +1,174 @@
+{
+  "version_modelo": 3,
+  "n_pozos_entrenamiento": 2817,
+  "tipo_modelo": "Gradient Boosting: regresion de la profundidad (m) con intervalo conformal",
+  "variables": [
+    "Profundidad IDW de los pozos vecinos (m)",
+    "Distancia al pozo conocido mas cercano (km)",
+    "Elevacion del terreno, SRTM (m)",
+    "Geologia favorable"
+  ],
+  "mejores_hiperparametros": {
+    "learning_rate": 0.1,
+    "max_depth": 2,
+    "n_estimators": 100
+  },
+  "hiperparametros_por_pliegue": [
+    {
+      "learning_rate": 0.03,
+      "max_depth": 2,
+      "n_estimators": 300
+    },
+    {
+      "learning_rate": 0.03,
+      "max_depth": 2,
+      "n_estimators": 300
+    },
+    {
+      "learning_rate": 0.03,
+      "max_depth": 2,
+      "n_estimators": 300
+    },
+    {
+      "learning_rate": 0.03,
+      "max_depth": 2,
+      "n_estimators": 300
+    },
+    {
+      "learning_rate": 0.03,
+      "max_depth": 2,
+      "n_estimators": 300
+    }
+  ],
+  "metricas_cv": {
+    "tipo_validacion": "Validacion cruzada espacial anidada: 5 pliegues por bloques de 10 km; IDW recalculado en cada pliegue (sin fuga de datos)",
+    "n_bloques_externos": 5,
+    "r2_medio": 0.039,
+    "r2_std": 0.028,
+    "r2_global": 0.047,
+    "rmse_medio": 42.49,
+    "rmse_std": 2.29,
+    "mae_m": 25.52,
+    "mediana_error_m": 11.86,
+    "pct_error_menor_5m": 28.9,
+    "pct_error_menor_10m": 45.8,
+    "acuerdo_categorias": 0.345
+  },
+  "comparacion": {
+    "Mediana de los pozos (referencia)": {
+      "mae_m": 27.94,
+      "mediana_error_m": 8.54,
+      "rmse_m": 48.81,
+      "r2": -0.254,
+      "r2_log": -0.088,
+      "pct_error_menor_5m": 25.5,
+      "pct_error_menor_10m": 57.5,
+      "pct_error_rel_menor_25pct": 14.3,
+      "acuerdo_categorias": 0.31
+    },
+    "IDW 5 pozos vecinos (referencia)": {
+      "mae_m": 27.94,
+      "mediana_error_m": 15.72,
+      "rmse_m": 42.8,
+      "r2": 0.035,
+      "r2_log": -0.082,
+      "pct_error_menor_5m": 25.1,
+      "pct_error_menor_10m": 39.3,
+      "pct_error_rel_menor_25pct": 22.9,
+      "acuerdo_categorias": 0.392
+    },
+    "Gradient Boosting": {
+      "mae_m": 25.52,
+      "mediana_error_m": 11.86,
+      "rmse_m": 42.55,
+      "r2": 0.047,
+      "r2_log": 0.156,
+      "pct_error_menor_5m": 28.9,
+      "pct_error_menor_10m": 45.8,
+      "pct_error_rel_menor_25pct": 20.2,
+      "acuerdo_categorias": 0.345
+    }
+  },
+  "escenario_provincia_no_vista": {
+    "Mediana de los pozos (referencia)": {
+      "mae_m": 28.16,
+      "mediana_error_m": 8.95,
+      "rmse_m": 48.96,
+      "r2": -0.262,
+      "r2_log": -0.117,
+      "pct_error_menor_5m": 24.6,
+      "pct_error_menor_10m": 55.6,
+      "pct_error_rel_menor_25pct": 14.1,
+      "acuerdo_categorias": 0.31
+    },
+    "IDW 5 pozos vecinos (referencia)": {
+      "mae_m": 34.23,
+      "mediana_error_m": 24.89,
+      "rmse_m": 47.54,
+      "r2": -0.19,
+      "r2_log": -0.432,
+      "pct_error_menor_5m": 17.4,
+      "pct_error_menor_10m": 28.2,
+      "pct_error_rel_menor_25pct": 14.9,
+      "acuerdo_categorias": 0.289
+    },
+    "Gradient Boosting": {
+      "mae_m": 29.01,
+      "mediana_error_m": 18.9,
+      "rmse_m": 43.91,
+      "r2": -0.015,
+      "r2_log": -0.104,
+      "pct_error_menor_5m": 17.9,
+      "pct_error_menor_10m": 31.9,
+      "pct_error_rel_menor_25pct": 15.3,
+      "acuerdo_categorias": 0.287
+    },
+    "n_provincias": 8
+  },
+  "intervalo": {
+    "confianza": 0.8,
+    "cobertura": 0.801,
+    "anchura_mediana_m": 63.1,
+    "por_distancia": [
+      {
+        "tramo": "< 2 km",
+        "n_pozos": 465,
+        "cobertura": 0.8,
+        "anchura_mediana_m": 50.5
+      },
+      {
+        "tramo": "2-5 km",
+        "n_pozos": 1304,
+        "cobertura": 0.8,
+        "anchura_mediana_m": 56.7
+      },
+      {
+        "tramo": ">= 5 km",
+        "n_pozos": 1048,
+        "cobertura": 0.803,
+        "anchura_mediana_m": 86.3
+      }
+    ],
+    "q_log_por_tramo": {
+      "< 2 km": 1.0541,
+      "2-5 km": 1.2269,
+      ">= 5 km": 1.3978
+    }
+  },
+  "importancia_variables": {
+    "Profundidad IDW de los pozos vecinos (m)": 0.8556,
+    "Elevacion del terreno, SRTM (m)": 0.0965,
+    "Distancia al pozo conocido mas cercano (km)": 0.0476,
+    "Geologia favorable": 0.0003
+  },
+  "interpretacion": {
+    "calidad_modelo": "Orientativo",
+    "descripcion": "En validacion espacial, el modelo reduce el error medio un 9 % respecto a usar solo los pozos vecinos (IDW) y un 9 % respecto a dar siempre la profundidad mediana.",
+    "r2_texto": "R2 = 0.05 (en log: 0.16). Error absoluto mediano: 11.9 m; medio: 25.5 m.",
+    "rmse_texto": "RMSE = 42.5 m.",
+    "intervalo_texto": "El intervalo del 80% contuvo la profundidad real en el 80% de los pozos de validacion (anchura mediana 63 m).",
+    "acuerdo_texto": "Acierta la categoria de profundidad en el 34% de los pozos.",
+    "mejora_frente_idw_pct": 8.7,
+    "mejora_frente_mediana_pct": 8.7
+  }
+}

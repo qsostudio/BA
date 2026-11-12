@@ -1,0 +1,46 @@
+firma cargar_datos: (csv_path: str) -> Tuple[pandas.DataFrame, pandas.Series, numpy.ndarray, numpy.ndarray, numpy.ndarray]
+[MODELO] 1480 pozos con profundidad real conocida y features completas, de 3879 totales
+[MODELO] Features: ['ndvi_verano', 'ndvi_estabilidad', 'humedad', 'elevacion', 'curvatura', 'acumulacion_flujo', 'lst_anomalia', 'geologia_score', 'profundidad_idw_vecinos', 'cluster_hidrogeologico']
+[MODELO] Profundidad real — media: 37.0 m | mín: 0.8 | máx: 200.0
+[MODELO] Grupos espaciales: 6 (por provincia)
+
+== OBJETIVO (profundidad, m), n = 1480
+percentiles 5/25/50/75/95/max: [  4.2   8.1  14.4  50.  140.  200. ]
+media: 37.0 | desv.: 43.8 | asimetria: 1.73
+
+== POR GRUPO (provincia)
+           n  media  mediana    p90
+g                                  
+Córdoba   58   21.9      8.8   63.7
+Granada  177   50.0     30.0  143.4
+Huelva   258   41.9     34.0  100.0
+Jaén     192   67.9     60.0  160.0
+Málaga   368   26.8     11.9   70.0
+Sevilla  427   25.7     12.2   68.0
+
+== CATEGORIAS DE PROFUNDIDAD (clasificar_profundidad)
+no se pudo: unhashable type: 'dict'
+
+== ESCALA DE LAS VARIABLES (min / mediana / max)
+                           min      50%       max
+ndvi_verano             -0.291    0.243     0.824
+ndvi_estabilidad         0.000    0.774     0.969
+humedad                  0.031    0.145     0.277
+elevacion                0.000  159.500  1415.000
+curvatura                0.121    0.694     0.932
+acumulacion_flujo        0.121    0.694     0.932
+lst_anomalia             0.000    0.308     1.000
+geologia_score           0.000    1.000     1.000
+profundidad_idw_vecinos  0.000    0.000     0.000
+cluster_hidrogeologico   0.000    1.000     3.000
+
+== construir_pipeline
+def construir_pipeline() -> Pipeline:
+    return Pipeline([
+        ("scaler", StandardScaler()),
+        ("modelo", GradientBoostingRegressor(
+            n_estimators=300, max_depth=5, learning_rate=0.05,
+            subsample=0.8, min_samples_leaf=3, random_state=42,
+        )),
+    ])
+

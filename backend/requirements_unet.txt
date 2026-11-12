@@ -1,0 +1,5 @@
+# Red U-Net de agua superficial (entrenamiento e inferencia)
+torch
+numpy
+scipy
+matplotlib

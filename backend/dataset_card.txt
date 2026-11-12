@@ -1,0 +1,138 @@
+======================================================================
+data/pozos_andalucia_listo.csv (3998, 17)
+Columnas: ['lat', 'lon', 'elevacion', 'profundidad', 'profundidad_norm', 'tipo_captacion', 'tiene_agua', 'provincia', 'municipio', 'demarcacion', 'ndvi_verano', 'humedad', 'ndvi_estabilidad', 'curvatura', 'acumulacion_flujo', 'lst_anomalia', 'profundidad_m']
+Nulos (>0):
+profundidad          1062
+ndvi_verano          1798
+humedad              1865
+curvatura            1798
+acumulacion_flujo    1798
+profundidad_m        1062
+profundidad_m:
+count    2936.0
+mean       48.0
+std        83.1
+min         0.6
+25%         7.7
+50%        14.5
+75%        56.0
+max      1317.0
+
+provincia:
+provincia
+Huelva      502
+Almería     502
+Málaga      501
+Córdoba     500
+Cádiz       499
+Granada     498
+Sevilla     497
+Jaén        496
+Albacete      2
+Toledo        1
+
+tipo_captacion:
+tipo_captacion
+1.0    2449
+0.7    1350
+0.8     199
+======================================================================
+data/pozos_andalucia_enriquecido.csv (3998, 20)
+Columnas: ['lat', 'lon', 'elevacion', 'profundidad', 'profundidad_norm', 'tipo_captacion', 'tiene_agua', 'provincia', 'municipio', 'demarcacion', 'ndvi_verano', 'humedad', 'ndvi_estabilidad', 'curvatura', 'acumulacion_flujo', 'lst_anomalia', 'profundidad_m', 'geologia_estado', 'geologia_score', 'cluster_hidrogeologico']
+Nulos (>0):
+profundidad          1062
+ndvi_verano          1798
+humedad              1865
+curvatura            1798
+acumulacion_flujo    1798
+profundidad_m        1062
+profundidad_m:
+count    2936.0
+mean       48.0
+std        83.1
+min         0.6
+25%         7.7
+50%        14.5
+75%        56.0
+max      1317.0
+
+provincia:
+provincia
+Huelva      502
+Almería     502
+Málaga      501
+Córdoba     500
+Cádiz       499
+Granada     498
+Sevilla     497
+Jaén        496
+Albacete      2
+Toledo        1
+
+tipo_captacion:
+tipo_captacion
+1.0    2449
+0.7    1350
+0.8     199
+======================================================================
+data/pozos_andalucia_entrenamiento_filtrado.csv (3879, 20)
+Columnas: ['lat', 'lon', 'elevacion', 'profundidad', 'profundidad_norm', 'tipo_captacion', 'tiene_agua', 'provincia', 'municipio', 'demarcacion', 'ndvi_verano', 'humedad', 'ndvi_estabilidad', 'curvatura', 'acumulacion_flujo', 'lst_anomalia', 'profundidad_m', 'geologia_estado', 'geologia_score', 'cluster_hidrogeologico']
+Nulos (>0):
+profundidad          1062
+ndvi_verano          1738
+humedad              1804
+curvatura            1738
+acumulacion_flujo    1738
+profundidad_m        1062
+profundidad_m:
+count    2817.0
+mean       35.5
+std        43.6
+min         0.6
+25%         7.4
+50%        13.5
+75%        50.0
+max       200.0
+
+provincia:
+provincia
+Córdoba     499
+Huelva      497
+Málaga      494
+Cádiz       491
+Sevilla     490
+Granada     487
+Almería     461
+Jaén        457
+Albacete      2
+Toledo        1
+
+tipo_captacion:
+tipo_captacion
+1.0    2447
+0.7    1238
+0.8     194
+======================================================================
+Pozos con profundidad: 2817 | con todas las features: 1480
+Nulos por feature entre los que tienen profundidad:
+ndvi_verano               1282
+ndvi_estabilidad             0
+humedad                   1337
+elevacion                    0
+curvatura                 1282
+acumulacion_flujo         1282
+lst_anomalia                 0
+geologia_score               0
+cluster_hidrogeologico       0
+
+Por provincia (con profundidad -> completos):
+           con_prof  completos
+provincia                     
+Sevilla         430        427
+Huelva          414        258
+Cádiz           411          0
+Málaga          393        368
+Almería         359          0
+Córdoba         306         58
+Granada         299        177
+Jaén            205        192

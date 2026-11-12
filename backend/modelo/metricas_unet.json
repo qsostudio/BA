@@ -1,0 +1,57 @@
+{
+  "modelo": "U-Net ligera (segmentacion de agua superficial)",
+  "etiquetas": "ESA WorldCover v200 (2021), clase 80 'aguas permanentes'",
+  "entrada": "Sentinel-2 L2A armonizado, mediana jun-sep 2021: B2, B3, B4, B8, B11, B12",
+  "parametros_entrenables": 483169,
+  "n_parches": {
+    "entrenamiento": 540,
+    "validacion": 110,
+    "test": 150
+  },
+  "separacion": "Espacial por bloques de 10 km (70/15/15)",
+  "epocas_entrenadas": 20,
+  "mejor_epoca": 14,
+  "umbral": 0.5,
+  "test": {
+    "U-Net (CNN)": {
+      "iou": 0.9019,
+      "f1_dice": 0.9484,
+      "precision": 0.9821,
+      "recall": 0.9169,
+      "exactitud": 0.9742,
+      "matriz_confusion": {
+        "vp": 145734,
+        "fp": 2649,
+        "fn": 13206,
+        "vn": 452811
+      }
+    },
+    "MNDWI > 0 (referencia, sin entrenamiento)": {
+      "iou": 0.7895,
+      "f1_dice": 0.8824,
+      "precision": 0.9647,
+      "recall": 0.813,
+      "exactitud": 0.9439,
+      "matriz_confusion": {
+        "vp": 129219,
+        "fp": 4730,
+        "fn": 29721,
+        "vn": 450730
+      }
+    },
+    "NDWI > 0 (referencia, sin entrenamiento)": {
+      "iou": 0.85,
+      "f1_dice": 0.9189,
+      "precision": 0.9893,
+      "recall": 0.8579,
+      "exactitud": 0.9608,
+      "matriz_confusion": {
+        "vp": 136355,
+        "fp": 1476,
+        "fn": 22585,
+        "vn": 453984
+      }
+    }
+  },
+  "tiempo_entrenamiento_s": 152.2
+}

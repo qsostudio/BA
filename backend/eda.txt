@@ -1,0 +1,67 @@
+
+=== A. POZOS DEL IGME ===
+Dataset bruto: pozos_andalucia_enriquecido.csv | dataset del modelo: pozos_profundidad_v3.csv
+Filas: 3998 | columnas: 20
+
+Estadisticos descriptivos (columnas numericas):
+                         count  ausentes_%     mean      50%     min       max  asimetria
+lat                     3998.0         0.0   37.263   37.254  36.025    38.474       0.09
+lon                     3998.0         0.0   -4.616   -4.684  -7.415    -1.669       0.08
+elevacion               3998.0         0.0  368.737  203.000   0.000  3078.000       1.11
+profundidad             2936.0        26.6   48.022   14.500   0.650  1317.000       5.28
+profundidad_norm        3998.0         0.0    0.175    0.071   0.000     1.000       2.20
+tipo_captacion          3998.0         0.0    0.889    1.000   0.700     1.000      -0.52
+tiene_agua              3998.0         0.0    0.709    1.000   0.000     1.000      -0.92
+ndvi_verano             2200.0        45.0    0.290    0.257  -0.353     0.854       0.84
+humedad                 2133.0        46.6    0.148    0.146   0.031     0.277       0.41
+ndvi_estabilidad        3998.0         0.0    0.785    0.791   0.000     1.000      -4.51
+curvatura               2200.0        45.0    0.688    0.689   0.000     1.000      -2.36
+acumulacion_flujo       2200.0        45.0    0.688    0.689   0.000     1.000      -2.36
+lst_anomalia            3998.0         0.0    0.358    0.344   0.000     1.000       1.25
+profundidad_m           2936.0        26.6   48.022   14.500   0.650  1317.000       5.28
+geologia_score          3998.0         0.0    0.802    1.000   0.000     1.000      -1.14
+cluster_hidrogeologico  3998.0         0.0    1.167    1.000   0.000     3.000       0.46
+
+Pozos con profundidad > 0: 2936 de 3998 (73.4 %)
+Pozos con mas de 200 m (se excluyen): 119 (4.1 %)
+Duplicados exactos (mismo punto y profundidad): 0
+Dataset del modelo: 2817 pozos | mediana 13.5 m | media 35.5 m | asimetria 1.82 -> en log 0.43
+
+Profundidad por provincia:
+           n_pozos  mediana_m  media_m  p25_m  p75_m
+provincia                                           
+Cádiz          411        8.1     20.2    5.5   20.0
+Córdoba        306        9.4     22.3    6.9   16.6
+Málaga         393       12.0     28.1    7.3   38.0
+Sevilla        430       12.2     25.8    8.0   23.0
+Granada        299       19.2     43.6    8.9   60.0
+Almería        359       26.0     48.8   11.9   70.0
+Huelva         414       31.0     43.2    8.0   66.0
+Jaén           205       60.0     69.5    8.7  120.0
+
+Correlacion de Spearman con la profundidad: elevacion 0.16 | IDW de los 5 vecinos 0.55 | geologia -0.03
+Distancia al vecino mas cercano frente al error del IDW: 0.18 (positiva = cuanto mas lejos esta el vecino, mayor error)
+Distancia al pozo mas cercano: mediana 1.06 km | p90 3.78 km
+
+Diferencia tipica de log(profundidad) entre pozos segun su distancia:
+tramo_km  n_pares  mediana_dif_log
+     0-1      397            0.335
+     1-2      700            0.485
+     2-5     2968            0.621
+    5-10     6388            0.742
+   10-20    16549            0.811
+   20-50    72204            0.904
+  50-100   204945            0.981
+
+=== B. PARCHES DE LA U-NET ===
+Parches: 800 | pixeles de agua: 20.1 % | parches sin agua: 42 %
+Firma espectral media (reflectancia):
+      banda  agua_media  agua_desv  resto_media  resto_desv
+  Azul (B2)      0.0994     0.0809       0.1018      0.0646
+ Verde (B3)      0.1335     0.0942       0.1409      0.0700
+  Rojo (B4)      0.1178     0.1257       0.1739      0.0849
+   NIR (B8)      0.1164     0.1445       0.3025      0.0687
+SWIR1 (B11)      0.1124     0.1315       0.3221      0.0877
+SWIR2 (B12)      0.0866     0.1006       0.2455      0.0841
+
+Tablas y figuras en /workspaces/BA/backend/modelo/eda

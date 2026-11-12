@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Buscador de Agua Subterránea</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.css" />
+  <script src="https://unpkg.com/leaflet-draw@1.0.4/dist/leaflet.draw.js"></script>
+
+  <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+  <script src="https://unpkg.com/leaflet.heat@0.2.0/dist/leaflet-heat.js"></script>
+</head>
+
+<body class="min-h-screen bg-cover bg-center bg-fixed"
+      style="background-image: url('assets/olivar.webp');">
+
+  <div class="min-h-screen bg-black/40 backdrop-blur-[1px] px-4 py-6">
+
+    <!-- CABECERA -->
+    <header class="max-w-[1800px] mx-auto mb-6 flex items-start justify-between">
+      <div>
+        <h1 class="text-3xl font-bold text-white drop-shadow-lg">
+          💧 Buscador de Agua Subterránea
+        </h1>
+        <p class="text-white/80 mt-1 text-sm drop-shadow">
+          Análisis con satélites Sentinel-2 · ERA5 · SRTM · Google Earth Engine · Algoritmo D8
+        </p>
+      </div>
+      <div class="flex items-center gap-3 mt-1">
+        <span id="user-info" class="text-white/70 text-xs"></span>
+        <button id="btn-logout" class="btn-limpiar text-xs px-3 py-1" style="width:auto;">
+          Cerrar sesión
+        </button>
+      </div>
+    </header>
+
+    <!-- PANEL PRINCIPAL -->
+    <main class="max-w-[1800px] mx-auto grid grid-cols-1 lg:grid-cols-4 gap-4">
+
+      <!-- COLUMNA IZQUIERDA -->
+      <aside class="lg:col-span-1 flex flex-col gap-4">
+
+        <!-- Buscador de finca -->
+        <div class="card">
+          <h2 class="card-title">🔍 Buscar finca o lugar</h2>
+          <div class="flex gap-2 mt-3">
+            <input id="buscador" type="text"
+                   placeholder="Ej: La Puebla de Cazalla, Sevilla"
+                   class="input-field flex-1"
+                   autocomplete="off" />
+            <button id="btn-buscar" class="btn-primary px-4 shrink-0">🔍</button>
+          </div>
+          <div id="buscador-resultados" class="mt-2 flex flex-col gap-1"></div>
+        </div>
+
+        <!-- Coordenadas -->
+        <div class="card">
+          <h2 class="card-title">📍 Coordenadas</h2>
+          <div class="flex flex-col gap-3 mt-3">
+            <div>
+              <label class="input-label">Latitud</label>
+              <input id="latitud" type="number" step="0.000001" value="37.389099"
+                     class="input-field" />
+            </div>
+            <div>
+              <label class="input-label">Longitud</label>
+              <input id="longitud" type="number" step="0.000001" value="-5.984459"
+                     class="input-field" />
+            </div>
+            <div>
+              <label class="input-label">Zoom: <span id="zoom-val">15</span></label>
+              <input id="zoom" type="range" min="5" max="18" value="15"
+                     class="w-full accent-blue-400" />
+            </div>
+          </div>
+          <button id="btn-ir-coordenadas" class="btn-primary mt-4 w-full">
+            🔍 Ir a esta ubicación
+          </button>
+          <button id="btn-clic-mapa" class="btn-secondary mt-2 w-full">
+            🎯 Colocar en el mapa
+          </button>
+          <button id="btn-humedad-elevacion" class="btn-secondary mt-2 w-full">
+            📊 Ver humedad y elevación
+          </button>
+          <div id="card-humedad-elevacion" class="hidden mt-3">
+            <div id="metricas-punto" class="grid grid-cols-2 gap-2"></div>
+            <div id="detalle-profundidad" class="hidden mt-3 text-xs text-white/70"></div>
+          </div>
+        </div>
+
+        <!-- Medir -->
+        <div class="card">
+          <h2 class="card-title">📏 Medir</h2>
+          <p id="medir-status" class="text-white/60 text-xs mt-1">
+            Elige una herramienta para empezar a medir.
+          </p>
+          <div class="flex gap-2 mt-3">
+            <button id="btn-medir-distancia" class="btn-secondary flex-1">📏 Distancia</button>
+            <button id="btn-medir-perpendicular" class="btn-secondary flex-1">⟂ Perpendicular</button>
+          </div>
+          <button id="btn-medir-coords" class="btn-secondary mt-2 w-full">
+            📍 Desde coordenadas
+          </button>
+          <div id="fila-deshacer-finalizar" class="hidden flex gap-2 mt-2">
+            <button id="btn-medir-deshacer" class="btn-secondary flex-1">↩️ Deshacer</button>
+            <button id="btn-medir-finalizar" class="btn-primary flex-1">✓ Finalizar</button>
+          </div>
+          <button id="btn-medir-borrar" class="btn-limpiar mt-2 w-full">
+            🗑️ Borrar mediciones
+          </button>
+        </div>
+
+        <!-- Análisis de parcela -->
+        <div class="card">
+          <h2 class="card-title">🤖 Análisis de parcela</h2>
+          <p class="text-white/70 text-xs mt-1">
+            Dibuja un polígono o rectángulo en el mapa para activar los análisis.
+          </p>
+
+          <div id="parcela-info" class="mt-2 text-xs text-green-300 hidden">
+            ✅ Parcela guardada. Listo para analizar.
+          </div>
+
+          <button id="btn-analizar-parcela" class="btn-secondary mt-3 w-full" disabled>
+            Dibuja una parcela primero
+          </button>
+
+          <button id="btn-vaguadas" class="btn-vaguadas mt-2 w-full" disabled>
+            Dibuja una parcela primero
+          </button>
+
+          <button id="btn-ndvi-serie" class="btn-ndvi mt-2 w-full" disabled>
+            Dibuja una parcela primero
+          </button>
+
+          <button id="btn-thermal" class="btn-thermal mt-2 w-full" disabled>
+            Dibuja una parcela primero
+          </button>
+
+          <button id="btn-informe-pdf" class="btn-secondary mt-2 w-full" style="background:rgba(220,38,38,0.15);border-color:rgba(220,38,38,0.4);" disabled>
+            Dibuja una parcela primero
+          </button>
+
+          <button id="btn-limpiar" class="btn-limpiar mt-2 w-full hidden">
+            🗑️ Limpiar capas del mapa
+          </button>
+        </div>
+
+        <!-- Resultados de punto -->
+        <!-- Modelo IA entrenable (solo admin) -->
+        <div id="panel-modelo-admin" class="card hidden">
+          <h2 class="card-title">🧠 Modelo IA Entrenable</h2>
+          <p class="text-white/60 text-xs mt-1">
+            Sube un CSV con pozos reales para entrenar el modelo. Cuantos más pozos, más preciso.
+          </p>
+          <div id="modelo-estado" class="mt-2"></div>
+          <label class="btn-primary mt-3 w-full text-center cursor-pointer block">
+            📂 Subir CSV de pozos
+            <input id="input-csv" type="file" accept=".csv" class="hidden" />
+          </label>
+          <button id="btn-ver-metricas" class="btn-secondary mt-2 w-full">
+            📊 Ver métricas del modelo
+          </button>
+          <div id="metricas-modelo" class="hidden mt-3 flex flex-col gap-2"></div>
+        </div>
+
+        <!-- Resultados del análisis de punto -->
+        <div id="card-resultados" class="card hidden">
+          <h2 class="card-title">📊 Resultados del análisis</h2>
+          <div id="metricas" class="grid grid-cols-2 gap-2 mt-3"></div>
+          <div id="geologia-info" class="mt-3 text-sm text-white/80"></div>
+          <div id="conclusion" class="mt-3"></div>
+        </div>
+
+      </aside>
+
+      <!-- COLUMNA DERECHA -->
+      <section class="lg:col-span-3 flex flex-col gap-4">
+
+        <!-- Mapa -->
+        <div class="card !p-0 overflow-hidden">
+          <div id="map" class="w-full" style="height:820px;"></div>
+        </div>
+
+        <!-- Leyenda IA heatmap -->
+        <div id="leyenda-ia" class="card hidden">
+          <h2 class="card-title mb-2">Leyenda — Mapa de calor de probabilidad de agua</h2>
+          <div class="flex items-center gap-3 mt-1">
+            <div style="height:12px;width:220px;border-radius:6px;background:linear-gradient(to right,#00f,#0ff,#0f0,#ff0,#f00);"></div>
+            <div class="flex justify-between w-full text-xs text-white/70">
+              <span>Baja</span>
+              <span>Media</span>
+              <span>Alta</span>
+            </div>
+          </div>
+          <p class="text-xs text-white/50 mt-1">⭐ Estrella = punto óptimo para cavar</p>
+        </div>
+
+        <!-- Leyenda vaguadas -->
+        <div id="leyenda-vaguadas" class="card hidden">
+          <h2 class="card-title mb-2">Leyenda — Flujo de agua y vaguadas</h2>
+          <div class="flex gap-6 text-sm text-white/90 flex-wrap">
+            <span class="flex items-center gap-2">
+              <span class="w-8 h-1 bg-sky-400 inline-block rounded"></span>Escorrentía — flujo difuso
+            </span>
+            <span class="flex items-center gap-2">
+              <span class="w-8 h-1 inline-block rounded" style="background:#4f46e5;"></span>Vaguada — cauce concentrado
+            </span>
+            <span class="flex items-center gap-2">
+              <span class="w-4 h-4 rounded-full bg-blue-900 border-2 border-blue-300 inline-block"></span>Punto de acumulación
+            </span>
+            <span class="flex items-center gap-2">⭐ Zona óptima para balsa o pozo</span>
+          </div>
+        </div>
+
+        <!-- Card resultado IA -->
+        <div id="card-ia" class="card hidden">
+          <div id="card-prediccion-modelo" class="hidden mb-4 p-3 rounded-xl border border-white/20" style="background:rgba(99,102,241,0.2)">
+            <h3 class="card-title text-sm">🧠 Predicción del modelo entrenado</h3>
+            <div id="resultado-modelo" class="mt-2"></div>
+          </div>
+          <h2 class="card-title">🤖 Resultado del análisis IA</h2>
+          <div id="metricas-ia" class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3"></div>
+          <div id="calidad-info" class="mt-3 text-xs text-white/70"></div>
+          <div id="coord-optima" class="mt-3 text-sm font-medium text-green-300"></div>
+          <div id="explicacion-ia" class="mt-2 text-sm text-white/80"></div>
+          <div id="resumen-puntos" class="mt-2 text-xs text-white/60"></div>
+          <div id="geologia-parcela" class="mt-3 hidden"></div>
+        </div>
+
+        <!-- Card NDVI temporal -->
+        <div id="card-ndvi" class="card hidden">
+          <h2 class="card-title">📈 Serie temporal NDVI — 2021 a 2024</h2>
+          <p class="text-white/60 text-xs mt-1">
+            Si hay agua subterránea, la zona mantiene el verde en julio-agosto cuando el resto se seca.
+          </p>
+          <div id="ndvi-firma" class="mt-2"></div>
+          <div class="mt-3" style="position:relative; height:240px;">
+            <canvas id="grafica-ndvi"></canvas>
+          </div>
+          <div id="ndvi-info" class="mt-2 text-xs text-white/60"></div>
+        </div>
+
+        <!-- Card anomalías térmicas -->
+        <div id="card-thermal" class="card hidden">
+          <h2 class="card-title">🌡️ Anomalías térmicas de verano — Landsat</h2>
+          <p class="text-white/60 text-xs mt-1">
+            Las zonas más frescas en verano indican humedad subterránea. Marcadas en cian.
+          </p>
+          <div id="metricas-thermal" class="grid grid-cols-3 gap-2 mt-3"></div>
+          <div id="thermal-info" class="mt-2 text-sm text-white/80"></div>
+        </div>
+
+        <!-- Resultado vaguadas -->
+        <div id="card-vaguadas" class="card hidden">
+          <h2 class="card-title">🌊 Resultado — Flujo de agua y vaguadas</h2>
+          <div id="metricas-vaguadas" class="grid grid-cols-2 sm:grid-cols-3 gap-2 mt-3"></div>
+          <div id="info-vaguadas" class="mt-3 text-sm text-white/80"></div>
+          <div id="puntos-vaguadas" class="mt-3 flex flex-col gap-2"></div>
+        </div>
+
+      </section>
+    </main>
+
+    <!-- Spinner global -->
+    <div id="spinner"
+         class="hidden fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+      <div class="bg-white/10 backdrop-blur rounded-2xl px-8 py-6 text-white text-center">
+        <div class="spinner-ring mx-auto mb-3"></div>
+        <p id="spinner-msg" class="text-sm">Cargando...</p>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>

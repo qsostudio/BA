@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+env/
+
+# Entorno y credenciales — NUNCA subir a GitHub
+backend/.env
+backend/gee_key.json
+
+# Editores
+.vscode/settings.json
+.idea/
+
+# Sistema
+.DS_Store
+Thumbs.db
+*.db

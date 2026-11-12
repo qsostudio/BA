@@ -1,0 +1,242 @@
+/* ── Tarjetas glassmorphism ───────────────────────────── */
+.card {
+  background: rgba(0, 0, 0, 0.50);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  padding: 1rem 1.25rem;
+  backdrop-filter: blur(10px);
+}
+
+.card-title {
+  color: #fff;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
+
+/* ── Inputs ──────────────────────────────────────────── */
+.input-label {
+  display: block;
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.7);
+  margin-bottom: 4px;
+}
+
+.input-field {
+  width: 100%;
+  background: rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.875rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.input-field:focus {
+  border-color: rgba(96,165,250,0.7);
+  background: rgba(255,255,255,0.15);
+}
+
+/* ── Botones ─────────────────────────────────────────── */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+}
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-primary:active { transform: scale(0.98); }
+
+.btn-secondary {
+  background: rgba(255,255,255,0.12);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.btn-secondary:hover:not(:disabled) { background: rgba(255,255,255,0.2); }
+.btn-secondary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Botón vaguadas — azul agua */
+.btn-vaguadas {
+  background: linear-gradient(135deg, #0369a1, #0284c7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+}
+.btn-vaguadas:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-vaguadas:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Botón limpiar */
+.btn-limpiar {
+  background: rgba(239,68,68,0.25);
+  color: #fca5a5;
+  border: 1px solid rgba(239,68,68,0.4);
+  border-radius: 8px;
+  padding: 7px 16px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+  width: 100%;
+}
+.btn-limpiar:hover { background: rgba(239,68,68,0.4); }
+
+/* ── Metric cards ────────────────────────────────────── */
+.metric-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 10px;
+  padding: 10px 12px;
+}
+.metric-label {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.55);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.metric-value {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-top: 2px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+}
+
+/* ── Alertas inline ──────────────────────────────────── */
+.alert {
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+.alert-success { background: rgba(21,128,61,0.5);  border: 1px solid #4ade80; color: #bbf7d0; }
+.alert-warning { background: rgba(161,98,7,0.5);   border: 1px solid #facc15; color: #fef08a; }
+.alert-danger  { background: rgba(153,27,27,0.5);  border: 1px solid #f87171; color: #fecaca; }
+.alert-info    { background: rgba(30,64,175,0.5);  border: 1px solid #60a5fa; color: #bfdbfe; }
+.alert-agua    { background: rgba(3,105,161,0.5);  border: 1px solid #38bdf8; color: #bae6fd; }
+
+/* ── Punto de acumulación card ───────────────────────── */
+.punto-card {
+  background: rgba(3,105,161,0.25);
+  border: 1px solid rgba(56,189,248,0.3);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 0.8rem;
+  color: #bae6fd;
+}
+
+/* ── Spinner ─────────────────────────────────────────── */
+.spinner-ring {
+  width: 40px;
+  height: 40px;
+  border: 3px solid rgba(255,255,255,0.2);
+  border-top-color: #60a5fa;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+
+/* ── Leaflet draw toolbar ────────────────────────────── */
+.leaflet-draw-toolbar a {
+  background-color: rgba(0,0,0,0.6) !important;
+}
+
+/* ── Buscador de finca ───────────────────────────────── */
+.resultado-busqueda {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  border-radius: 8px;
+  padding: 7px 10px;
+  font-size: 0.8rem;
+  color: #e2e8f0;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.resultado-busqueda:hover {
+  background: rgba(96,165,250,0.25);
+  border-color: rgba(96,165,250,0.5);
+}
+
+/* ── Botón NDVI serie ────────────────────────────────── */
+.btn-ndvi {
+  background: linear-gradient(135deg, #15803d, #16a34a);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+}
+.btn-ndvi:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-ndvi:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Botón térmico ───────────────────────────────────── */
+.btn-thermal {
+  background: linear-gradient(135deg, #b45309, #d97706);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+}
+.btn-thermal:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-thermal:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Botón U-Net ─────────────────────────────────────── */
+.btn-unet {
+  background: linear-gradient(135deg, #7c3aed, #a855f7);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 9px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+}
+.btn-unet:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-unet:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* ── Botón informe PDF ───────────────────────────────── */
+.btn-pdf {
+  background: linear-gradient(135deg, #dc2626, #ef4444);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: opacity 0.2s, transform 0.1s;
+  width: 100%;
+}
+.btn-pdf:hover:not(:disabled) { opacity: 0.9; transform: translateY(-1px); }
+.btn-pdf:disabled { opacity: 0.4; cursor: not-allowed; }

@@ -1,0 +1,4 @@
+﻿Modelo,mae_m,mediana_error_m,rmse_m,r2,r2_log,pct_error_menor_5m,pct_error_menor_10m,pct_error_rel_menor_25pct,acuerdo_categorias
+Mediana de los pozos (referencia),27.94,8.54,48.81,-0.254,-0.088,25.5,57.5,14.3,0.31
+IDW 5 pozos vecinos (referencia),27.94,15.72,42.8,0.035,-0.082,25.1,39.3,22.9,0.392
+Gradient Boosting,25.52,11.86,42.55,0.047,0.156,28.9,45.8,20.2,0.345

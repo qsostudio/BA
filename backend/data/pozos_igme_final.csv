@@ -1,0 +1,501 @@
+lat,lon,elevacion,profundidad,naturaleza,provincia,municipio,utilizacion,tiene_agua,caudal_ls,ndvi_verano,ndvi_estabilidad,humedad,curvatura,acumulacion_flujo,geologia_score,lst_anomalia
+43.25660937,-8.76742507,225.0,4.0,Pozo,A Coruña,Malpica de Bergantiños,Abastecimiento a núcleos urbanos,1,,0.4039,0.083,,0.814,0.814,0.5,0.895
+43.28744731,-8.63783197,15.0,7.0,Pozo,A Coruña,Carballo,Abastecimiento (que no sea núcleo urbano),1,,0.5545,0.146,0.146,0.395,0.395,0.5,0.772
+42.84744077,-8.65174474,26.0,5.0,Pozo,A Coruña,Brión,Abastecimiento (que no sea núcleo urbano),1,,0.653,0.14,0.1907,0.233,0.233,0.5,0.742
+42.86889915,-8.64540497,38.0,4.5,Pozo,A Coruña,Ames,Agricultura,1,,0.7272,0.148,0.1976,0.279,0.279,0.5,0.713
+42.85098443,-8.65324254,32.0,6.0,Pozo,A Coruña,Ames,Industria,1,,0.7551,0.16,0.1965,0.558,0.558,0.5,0.767
+42.86474528,-8.64754658,41.0,8.0,Pozo,A Coruña,Ames,Abastecimiento (que no sea núcleo urbano),1,,0.6291,0.131,0.1976,0.372,0.372,0.5,0.69
+42.79874238,-8.64683249,30.0,5.0,Pozo,A Coruña,Padrón,No se utiliza,0,,0.4137,0.172,0.1943,0.326,0.326,0.5,0.551
+42.79904293,-8.64500865,28.0,3.7,Pozo,A Coruña,Padrón,No se utiliza,0,,0.2596,0.162,0.1943,0.442,0.442,0.5,0.481
+42.73126058,-8.66986342,12.0,5.0,Pozo,A Coruña,Dodro,Abastecimiento a núcleos urbanos,1,,0.3347,0.17,0.1908,0.535,0.535,0.5,0.547
+42.5954577,-8.74502053,29.0,8.0,Pozo,Pontevedra,Vilagarcía de Arousa,Industria,1,,0.6679,0.145,0.1911,0.279,0.279,0.5,0.659
+42.60120778,-8.64523224,23.0,9.0,Pozo,Pontevedra,Caldas de Reis,Abastecimiento (que no sea núcleo urbano),1,,0.6403,0.165,0.1959,0.605,0.605,0.5,0.613
+42.6025908,-8.6527825,18.0,4.0,Pozo,Pontevedra,Caldas de Reis,Abastecimiento (que no sea núcleo urbano),1,,0.7141,0.162,0.1911,0.279,0.279,0.5,0.63
+42.55185428,-8.81149717,16.0,5.0,Pozo,Pontevedra,Vilagarcía de Arousa,Agricultura,1,,0.5791,0.141,0.2148,0.535,0.535,0.5,0.62
+42.54022028,-8.72736774,25.0,6.0,Pozo,Pontevedra,Ribadumia,Abastecimiento (que no sea núcleo urbano),1,,0.6409,0.163,0.1939,0.256,0.256,0.5,0.67
+42.56869762,-8.72771885,127.0,5.0,Pozo,Pontevedra,Vilagarcía de Arousa,Industria,1,,0.8299,0.163,0.1911,0.581,0.581,0.5,0.805
+42.17037891,-8.67800416,466.0,8.0,Pozo,Pontevedra,Vigo,Abastecimiento (que no sea núcleo urbano),1,,0.5864,0.15,0.1331,0.558,0.558,0.5,0.629
+42.20510215,-8.60417585,68.0,7.0,Pozo,Pontevedra,Mos,Abastecimiento (que no sea núcleo urbano),1,,0.3906,0.174,0.1804,0.279,0.279,0.5,0.546
+42.13083805,-8.63223732,24.0,10.0,Pozo,Pontevedra,O Porriño,Abastecimiento (que no sea núcleo urbano),1,,0.9007,0.19,0.1956,0.465,0.465,0.5,0.873
+42.14444159,-8.63058543,22.0,8.0,Pozo,Pontevedra,O Porriño,Industria,1,,0.8503,0.179,0.1956,0.209,0.209,0.5,0.696
+42.13501782,-8.62411794,26.0,11.0,Pozo,Pontevedra,O Porriño,Industria,1,,0.0994,0.118,0.1956,0.349,0.349,0.5,0.524
+42.1149263,-8.62474454,16.0,5.0,Pozo,Pontevedra,O Porriño,Industria,1,,0.0671,0.094,0.1956,0.442,0.442,0.5,0.376
+42.05426564,-8.56553361,7.0,5.0,Pozo,Pontevedra,Tui,Abastecimiento (que no sea núcleo urbano),1,,0.5407,0.159,0.1956,0.535,0.535,0.5,0.622
+41.92244428,-8.80137382,0.0,7.0,Pozo,Pontevedra,O Rosal,Agricultura,1,,0.7954,0.165,0.2004,0.302,0.302,0.5,0.753
+41.99330407,-8.69947034,18.0,8.0,Pozo,Pontevedra,Tomiño,Agricultura,1,,0.4486,0.154,0.1951,0.256,0.256,0.5,0.566
+41.91342739,-8.83447805,8.0,8.0,Pozo,Pontevedra,O Rosal,Agricultura,1,,0.5402,0.145,0.2004,0.395,0.395,0.5,0.633
+43.24769129,-8.30449126,122.0,15.0,Pozo,A Coruña,Carral,Abastecimiento (que no sea núcleo urbano),1,,0.529,0.129,0.226,0.256,0.256,0.5,0.582
+42.42080443,-8.21605616,308.0,0.0,Pozo,Pontevedra,Tui,Desconocido,0,,0.6963,0.171,0.2841,0.349,0.349,0.5,0.886
+42.08455468,-8.51592406,24.0,7.0,Pozo,Pontevedra,Salvaterra de Miño,Abastecimiento (que no sea núcleo urbano),1,,0.4064,0.181,0.2014,0.186,0.186,0.5,0.692
+42.12919864,-8.46100473,85.0,9.0,Pozo,Pontevedra,Salvaterra de Miño,Industria,1,,0.3678,0.16,0.2014,0.302,0.302,0.5,0.568
+42.08730371,-8.45979942,28.0,8.0,Pozo,Pontevedra,Salvaterra de Miño,No se utiliza,0,,0.4517,0.147,0.2014,0.581,0.581,0.5,0.51
+43.73824392,-7.875792,8.0,2.3,Pozo,A Coruña,Ortigueira,No se utiliza,0,,0.4169,0.097,0.1644,0.465,0.465,0.5,0.968
+43.74160631,-7.86980505,9.0,8.0,Pozo,A Coruña,Ortigueira,No se utiliza,0,,0.1602,0.117,0.1644,0.395,0.395,0.5,0.881
+43.52471252,-8.06059826,47.0,5.0,Pozo,A Coruña,San Sadurniño,Industria,1,,0.5604,0.131,0.2279,0.581,0.581,0.5,0.743
+42.42749238,-7.96854303,328.0,6.0,Pozo,Ourense,San Cristovo de Cea,Desconocido,0,,0.6621,0.169,0.2361,0.628,0.628,0.5,0.66
+42.42437589,-7.86827352,474.0,6.0,Pozo,Ourense,Coles,Desconocido,0,,0.6394,0.175,0.2088,0.512,0.512,0.5,0.607
+42.44566489,-7.91854781,427.0,5.0,Pozo,Ourense,Vilamarín,Desconocido,0,,0.6291,0.179,0.2088,0.326,0.326,0.5,0.646
+42.37493135,-7.99466792,124.0,0.0,Pozo,Ourense,O Carballiño,Agricultura,1,,0.8262,0.179,0.2361,0.442,0.442,0.5,0.86
+42.33712654,-7.8738214,147.0,8.0,Pozo,Ourense,Ourense,Desconocido,0,,0.2245,0.133,0.1918,0.721,0.721,0.5,0.494
+42.37119543,-7.92245018,398.0,12.0,Pozo,Ourense,Ourense,Abastecimiento a núcleos urbanos,1,,0.3137,0.169,0.2088,0.349,0.349,0.5,0.602
+42.39287252,-7.92049986,412.0,8.0,Pozo,Ourense,Ourense,Abastecimiento (que no sea núcleo urbano),1,,0.7441,0.178,0.2088,0.209,0.209,0.5,0.728
+42.40682259,-7.89216459,471.0,3.0,Pozo,Ourense,Amoeiro,Abastecimiento a núcleos urbanos,1,,0.4719,0.152,0.2088,0.512,0.512,0.5,0.588
+42.41020087,-7.87104414,457.0,0.0,Pozo,Ourense,Coles,Desconocido,0,,0.5868,0.164,0.2088,0.233,0.233,0.5,0.672
+42.30590046,-8.13633922,86.0,1.0,Pozo,Ourense,Carballeda de Avia,Desconocido,0,,0.5721,0.178,0.2796,0.512,0.512,0.5,0.571
+42.29976491,-7.94827235,436.0,4.0,Pozo,Ourense,Toén,Industria,1,,0.8059,0.168,0.1918,0.326,0.326,0.5,0.93
+42.23408262,-7.86965675,494.0,0.0,Pozo,Ourense,A Merca,Abastecimiento (que no sea núcleo urbano),1,,0.3512,0.165,0.1879,0.302,0.302,0.5,0.713
+42.17376793,-7.88994639,530.0,0.0,Pozo,Ourense,A Merca,Abastecimiento (que no sea núcleo urbano),1,,0.5801,0.151,0.1879,0.395,0.395,0.5,0.742
+43.14557623,-7.61259865,395.0,5.0,Pozo,Lugo,Begonte,Abastecimiento (que no sea núcleo urbano),1,,0.1084,0.114,0.201,0.419,0.419,0.5,0.673
+42.38751749,-7.82384084,143.0,2.0,Pozo,Ourense,Coles,Ganadería,1,,0.8942,0.188,0.179,0.209,0.209,0.5,0.862
+42.39023975,-7.85161128,364.0,0.0,Pozo,Ourense,Coles,Abastecimiento (que no sea núcleo urbano),1,,0.5086,0.17,0.2088,0.326,0.326,0.5,0.641
+42.3566407,-7.84467075,191.0,0.0,Pozo,Ourense,Ourense,Abastecimiento (que no sea núcleo urbano),1,,0.6688,0.157,0.179,1.0,1.0,0.5,0.757
+42.37390777,-7.82104628,157.0,4.0,Pozo,Ourense,O Pereiro de Aguiar,Abastecimiento (que no sea núcleo urbano),1,,0.4898,0.175,0.179,0.209,0.209,0.5,0.651
+42.371116,-7.77132692,428.0,0.0,Pozo,Ourense,Nogueira de Ramuín,Abastecimiento (que no sea núcleo urbano),1,,0.5262,0.173,0.179,0.581,0.581,0.5,0.671
+42.3753277,-7.75021986,445.0,7.0,Pozo,Ourense,O Pereiro de Aguiar,No se utiliza,0,,0.8174,0.182,0.179,0.558,0.558,0.5,0.765
+42.38865244,-7.72937562,518.0,8.0,Pozo,Ourense,Nogueira de Ramuín,Desconocido,0,,0.4757,0.169,0.1812,0.419,0.419,0.5,0.797
+42.33600263,-7.67520568,762.0,9.0,Pozo,Ourense,Esgos,Abastecimiento (que no sea núcleo urbano),1,,0.581,0.151,0.18,0.349,0.349,0.5,0.785
+42.30190237,-7.8518839,228.0,0.0,Pozo,Ourense,Ourense,Desconocido,0,,0.3348,0.167,0.1918,0.419,0.419,0.5,0.515
+42.29525144,-7.79272167,356.0,7.0,Pozo,Ourense,Paderne de Allariz,Abastecimiento (que no sea núcleo urbano),1,,0.2112,0.153,0.1722,0.419,0.419,0.5,0.567
+42.31305992,-7.77522358,390.0,9.0,Pozo,Ourense,O Pereiro de Aguiar,Abastecimiento (que no sea núcleo urbano),1,,0.6698,0.175,0.1722,0.581,0.581,0.5,0.766
+42.2975097,-7.77300172,420.0,4.5,Pozo,Ourense,O Pereiro de Aguiar,Abastecimiento (que no sea núcleo urbano),1,,0.4294,0.168,0.1722,0.465,0.465,0.5,0.778
+42.26496771,-7.79994421,349.0,0.0,Pozo,Ourense,Taboadela,Abastecimiento (que no sea núcleo urbano),1,,0.2679,0.162,0.1722,0.372,0.372,0.5,0.604
+42.2772306,-7.77577221,423.0,34.0,Pozo,Ourense,Paderne de Allariz,Abastecimiento (que no sea núcleo urbano),1,,0.3245,0.181,0.1722,0.302,0.302,0.5,0.65
+42.33174156,-7.73243969,558.0,5.0,Pozo,Ourense,O Pereiro de Aguiar,Abastecimiento (que no sea núcleo urbano),1,,0.7758,0.168,0.18,0.488,0.488,0.5,0.825
+42.31782155,-7.75161344,507.0,5.0,Pozo,Ourense,Esgos,Abastecimiento (que no sea núcleo urbano),1,,0.7407,0.169,0.1722,0.512,0.512,0.5,0.694
+42.31369694,-7.72382248,517.0,8.0,Pozo,Ourense,Esgos,Abastecimiento (que no sea núcleo urbano),1,,0.7038,0.161,0.18,0.674,0.674,0.5,0.723
+42.25639987,-7.77244126,385.0,0.0,Pozo,Ourense,Paderne de Allariz,Agricultura,1,,0.3891,0.169,0.1722,0.581,0.581,0.5,0.619
+42.28313843,-7.73103729,523.0,0.0,Pozo,Ourense,Paderne de Allariz,Abastecimiento (que no sea núcleo urbano),1,,0.5196,0.173,0.18,0.698,0.698,0.5,0.881
+42.27810428,-7.74826231,439.0,0.0,Pozo,Ourense,Paderne de Allariz,Desconocido,0,,0.406,0.145,0.18,0.442,0.442,0.5,0.674
+42.311013,-7.67382485,697.0,0.0,Pozo,Ourense,Maceda,Abastecimiento (que no sea núcleo urbano),1,,0.8076,0.166,0.18,0.372,0.372,0.5,0.834
+42.27488861,-7.68075506,631.0,0.0,Pozo,Ourense,Maceda,Abastecimiento (que no sea núcleo urbano),1,,0.5937,0.154,0.18,0.163,0.163,0.5,0.682
+42.245035,-7.80577663,390.0,10.0,Pozo,Ourense,Taboadela,Abastecimiento (que no sea núcleo urbano),1,,0.5749,0.16,0.1761,0.256,0.256,0.5,0.872
+42.20719373,-7.79827653,475.0,4.0,Pozo,Ourense,Allariz,Agricultura,1,,0.5358,0.163,0.1761,0.419,0.419,0.5,0.606
+42.2450919,-7.72492739,605.0,8.0,Pozo,Ourense,Baños de Molgas,Abastecimiento a núcleos urbanos,1,,0.2702,0.159,0.1753,0.349,0.349,0.5,0.64
+42.22843248,-7.7210578,525.0,0.0,Pozo,Ourense,Baños de Molgas,No se utiliza,0,,0.7123,0.163,0.1753,0.349,0.349,0.5,0.781
+42.18325844,-7.65271537,672.0,0.0,Pozo,Ourense,Vilar de Barrio,Abastecimiento (que no sea núcleo urbano),1,,0.2454,0.163,0.1753,0.581,0.581,0.5,0.573
+42.21820652,-7.66462177,597.0,0.0,Pozo,Ourense,Baños de Molgas,Abastecimiento (que no sea núcleo urbano),1,,0.5962,0.16,0.1753,0.256,0.256,0.5,0.718
+43.53847083,-7.45758632,86.0,3.5,Pozo,Lugo,O Valadouro,Abastecimiento (que no sea núcleo urbano),1,,0.4674,0.083,0.2908,0.419,0.419,0.5,0.818
+43.55085357,-7.38406959,54.0,3.5,Pozo,Lugo,Alfoz,Abastecimiento (que no sea núcleo urbano),1,,0.6925,0.123,0.229,0.512,0.512,0.5,1.0
+43.43878535,-7.35544542,92.0,2.0,Pozo,Lugo,Mondoñedo,No se utiliza,0,,0.4306,0.1,0.2911,0.605,0.605,0.5,0.907
+43.26115976,-7.41563994,426.0,8.0,Pozo,Lugo,Castro de Rei,Abastecimiento (que no sea núcleo urbano),1,,0.5464,0.106,0.2402,0.256,0.256,0.5,0.668
+43.20684668,-7.31401817,548.0,0.0,Pozo,Lugo,Pol,Desconocido,0,,0.5378,0.123,0.2307,0.302,0.302,0.5,0.789
+43.20507945,-7.32059081,500.0,0.0,Pozo,Lugo,Pol,Desconocido,0,,0.285,0.144,0.2307,0.581,0.581,0.5,0.659
+43.19639231,-7.31095842,544.0,0.0,Pozo,Lugo,Pol,Desconocido,0,,0.6167,0.133,0.2307,0.326,0.326,0.5,0.728
+43.19700746,-7.31115068,543.0,0.0,Pozo,Lugo,Pol,Desconocido,0,,0.5898,0.131,0.2307,0.209,0.209,0.5,0.725
+43.19738895,-7.31137401,545.0,0.0,Pozo,Lugo,Pol,Desconocido,0,,0.5578,0.116,0.2307,0.209,0.209,0.5,0.728
+43.19563333,-7.31078244,544.0,0.0,Pozo,Lugo,Pol,Desconocido,0,,0.6003,0.111,0.2307,0.465,0.465,0.5,0.764
+43.19583981,-7.31073982,545.0,0.0,Pozo,Lugo,Pol,Desconocido,0,,0.6762,0.135,0.2307,0.395,0.395,0.5,0.755
+42.52650124,-7.50444505,300.0,32.0,Pozo con sondeo,Lugo,Monforte de Lemos,Abastecimiento (que no sea núcleo urbano),1,,0.6047,0.187,0.2333,0.372,0.372,0.5,0.505
+42.47430222,-7.24758209,279.0,11.0,Pozo,Lugo,Quiroga,No se utiliza,0,,0.6329,0.189,0.2798,0.512,0.512,0.5,0.645
+39.56610241,-7.38324527,348.0,7.0,Pozo,Cáceres,Herrera de Alcántara,Ganadería,1,,0.3272,0.174,0.1541,0.651,0.651,0.5,0.198
+37.96971043,-7.22538495,219.0,11.0,Pozo,Huelva,Rosal de la Frontera,Abastecimiento a núcleos urbanos,1,,0.1524,0.148,0.1293,0.512,0.512,0.5,0.204
+37.97490306,-7.21717686,249.0,7.58,Pozo,Huelva,Rosal de la Frontera,Abastecimiento a núcleos urbanos,1,,0.2718,0.158,0.1293,0.581,0.581,0.5,0.344
+37.9626988,-7.25059565,259.0,13.0,Pozo,Huelva,Rosal de la Frontera,Agricultura y ganadería,1,,0.3761,0.178,0.1282,0.93,0.93,0.5,0.36
+37.96943674,-7.22516388,219.0,4.8,Pozo con galería o taladro horizontal,Huelva,Rosal de la Frontera,No se utiliza,0,,0.2105,0.15,0.1293,0.349,0.349,0.5,0.204
+37.52590279,-7.41493183,161.0,0.0,Pozo,Huelva,El Granado,Desconocido,0,,0.1525,0.178,0.1433,0.744,0.744,0.5,0.226
+37.52312311,-7.41465127,150.0,6.3,Pozo,Huelva,El Granado,No se utiliza,0,,0.272,0.177,0.1433,0.767,0.767,0.5,0.304
+37.47145658,-7.46548943,14.0,8.0,Pozo,Huelva,Sanlúcar de Guadiana,Abastecimiento (que no sea núcleo urbano),1,,0.248,0.172,0.147,0.163,0.163,0.5,0.339
+37.42148039,-7.18798047,155.0,2.16,Pozo,Huelva,Villanueva de los Castillejos,Abastecimiento y ganadería,1,,0.2796,0.18,0.1061,0.372,0.372,0.5,0.461
+37.38979178,-7.35687811,132.0,10.95,Pozo,Huelva,San Silvestre de Guzmán,No se utiliza,0,,0.2801,0.186,0.1331,0.465,0.465,0.5,0.242
+37.39120226,-7.35525455,128.0,5.4,Pozo,Huelva,San Silvestre de Guzmán,No se utiliza,0,,0.3412,0.176,0.1331,0.209,0.209,0.5,0.253
+37.39006343,-7.35437582,138.0,11.48,Pozo,Huelva,San Silvestre de Guzmán,No se utiliza,0,,0.1994,0.182,0.1331,0.419,0.419,0.5,0.263
+37.3362046,-7.31548296,123.0,2.54,Pozo,Huelva,Villablanca,Abastecimiento y agricultura,1,,0.1645,0.182,0.1258,0.326,0.326,0.5,0.33
+37.3353646,-7.30714909,115.0,3.9,Pozo,Huelva,Villablanca,Abastecimiento y agricultura,1,,0.228,0.166,0.1258,0.488,0.488,0.5,0.337
+37.35174855,-7.29076029,117.0,10.4,Pozo,Huelva,Lepe,Abastecimiento e industria,1,,0.1439,0.167,0.1237,0.419,0.419,0.5,0.335
+37.35452595,-7.27102966,88.0,5.33,Pozo,Huelva,Lepe,Ganadería,1,,0.2422,0.165,0.1237,0.349,0.349,0.5,0.389
+37.38673775,-7.35438087,143.0,8.85,Pozo,Huelva,San Silvestre de Guzmán,No se utiliza,0,,0.4536,0.187,0.1331,0.256,0.256,0.5,0.247
+37.38340071,-7.34131824,140.0,6.0,Pozo,Huelva,San Silvestre de Guzmán,No se utiliza,0,,0.1771,0.19,0.1237,0.349,0.349,0.5,0.248
+37.34536806,-7.26604722,85.0,2.57,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.0984,0.152,0.1258,0.302,0.302,0.5,0.404
+37.34453108,-7.26797429,86.0,3.87,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.3218,0.173,0.1258,0.233,0.233,0.5,0.385
+37.36400293,-7.19008865,115.0,4.04,Pozo,Huelva,Cartaya,Abastecimiento y ganadería,1,,0.5417,0.178,0.1061,0.419,0.419,0.5,0.522
+37.37592379,-7.25214071,97.0,3.14,Pozo,Huelva,Cartaya,Abastecimiento (que no sea núcleo urbano),1,,0.4223,0.181,0.1237,0.558,0.558,0.5,0.336
+37.39369814,-7.23103299,126.0,3.62,Pozo,Huelva,Cartaya,Abastecimiento y ganadería,1,,0.158,0.17,0.1061,0.558,0.558,0.5,0.31
+37.39369534,-7.21825731,141.0,5.93,Pozo,Huelva,Cartaya,Abastecimiento y ganadería,1,,0.3818,0.167,0.1061,0.372,0.372,0.5,0.412
+37.40814167,-7.21103409,126.0,1.96,Pozo,Huelva,Villanueva de los Castillejos,Abastecimiento (que no sea núcleo urbano),1,,0.6903,0.183,0.1061,0.14,0.14,0.5,0.482
+37.25008591,-7.28659222,39.0,33.33,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.6068,0.187,0.1258,0.395,0.395,0.5,0.555
+37.29829138,-7.31008033,61.0,12.49,Pozo,Huelva,Villablanca,Abastecimiento y ganadería,1,,0.3986,0.175,0.1258,0.302,0.302,0.5,0.337
+37.29426238,-7.30187895,60.0,6.72,Pozo,Huelva,Villablanca,Abastecimiento (que no sea núcleo urbano),1,,0.2148,0.131,0.1258,0.442,0.442,0.5,0.299
+37.29259322,-7.29799077,63.0,2.72,Pozo,Huelva,Villablanca,Abastecimiento (que no sea núcleo urbano),1,,0.2096,0.162,0.1258,0.558,0.558,0.5,0.32
+37.28787398,-7.28326379,65.0,3.08,Pozo,Huelva,Villablanca,Abastecimiento (que no sea núcleo urbano),1,,0.4587,0.187,0.1258,0.326,0.326,0.5,0.409
+37.26536487,-7.33409327,39.0,12.32,Pozo,Huelva,Villablanca,Abastecimiento y ganadería,1,,0.1553,0.153,0.1258,0.395,0.395,0.5,0.334
+37.27035893,-7.32520903,29.0,11.43,Pozo,Huelva,Villablanca,Abastecimiento y ganadería,1,,0.1876,0.075,0.1258,0.116,0.116,0.5,0.355
+37.26008828,-7.32105046,42.0,15.33,Pozo,Huelva,Villablanca,Abastecimiento (que no sea núcleo urbano),1,,0.2311,0.186,0.1258,0.442,0.442,0.5,0.46
+37.26842204,-7.30437765,51.0,3.6,Pozo,Huelva,Villablanca,Abastecimiento (que no sea núcleo urbano),1,,0.4753,0.185,0.1258,0.209,0.209,0.5,0.43
+37.27175786,-7.28132982,44.0,3.71,Pozo,Huelva,Villarrasa,Abastecimiento (que no sea núcleo urbano),1,,0.7221,0.184,0.1258,0.488,0.488,0.5,0.478
+37.27314771,-7.30520756,43.0,3.85,Pozo,Huelva,Villablanca,Abastecimiento (que no sea núcleo urbano),1,,0.2573,0.153,0.1258,0.512,0.512,0.5,0.313
+37.28841947,-7.31938223,50.0,9.86,Pozo,Huelva,Villablanca,Abastecimiento y ganadería,1,,0.2661,0.159,0.1258,0.256,0.256,0.5,0.314
+37.31842324,-7.33465864,106.0,2.9,Pozo,Huelva,Villablanca,Abastecimiento (que no sea núcleo urbano),1,,0.1667,0.174,0.1258,0.279,0.279,0.5,0.287
+37.32508725,-7.32659992,121.0,3.32,Pozo,Huelva,Villablanca,Abastecimiento y agricultura,1,,0.2799,0.163,0.1258,0.605,0.605,0.5,0.454
+37.30786046,-7.33020951,101.0,7.04,Pozo,Huelva,Villablanca,Abastecimiento y ganadería,1,,0.2443,0.186,0.1258,0.233,0.233,0.5,0.4
+37.31314345,-7.3379913,114.0,7.17,Pozo,Huelva,Villablanca,Abastecimiento y agricultura,1,,0.3899,0.179,0.1258,0.581,0.581,0.5,0.436
+37.30231997,-7.32464589,85.0,4.58,Pozo,Huelva,Villablanca,Abastecimiento y ganadería,1,,0.2254,0.186,0.1258,0.419,0.419,0.5,0.443
+37.3103698,-7.31521436,104.0,3.47,Pozo,Huelva,Villablanca,Abastecimiento y agricultura,1,,0.5912,0.189,0.1258,0.302,0.302,0.5,0.559
+37.25119317,-7.28214741,33.0,14.8,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.4177,0.191,0.1258,0.395,0.395,0.5,0.397
+37.30368591,-7.34549974,86.0,8.31,Pozo,Huelva,Villablanca,Abastecimiento a núcleos urbanos,1,,0.1535,0.168,0.1258,0.465,0.465,0.5,0.267
+37.30062518,-7.34382945,86.0,6.83,Pozo,Huelva,Villablanca,No se utiliza,0,,0.19,0.173,0.1258,0.372,0.372,0.5,0.373
+37.3022912,-7.29799746,70.0,9.0,Pozo,Huelva,Villablanca,No se utiliza,0,,0.1805,0.187,0.1258,0.512,0.512,0.5,0.34
+37.26508778,-7.2590973,34.0,15.12,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.3325,0.175,0.1258,0.581,0.581,0.5,0.4
+37.25898686,-7.26160591,43.0,11.67,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.4785,0.192,0.1258,0.837,0.837,0.5,0.509
+37.26648269,-7.19521518,31.0,22.57,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.1727,0.116,0.0841,0.465,0.465,0.5,0.267
+37.2556434,-7.19660179,18.0,13.39,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.1815,0.152,0.0841,0.372,0.372,0.5,0.323
+37.2517534,-7.21048364,24.0,22.25,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.1475,0.163,0.0841,0.535,0.535,0.5,0.272
+37.25453229,-7.254109,37.0,16.02,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.5346,0.16,0.1258,0.581,0.581,0.5,0.493
+37.27925411,-7.26325946,64.0,15.57,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.1675,0.151,0.1258,0.535,0.535,0.5,0.324
+37.27703083,-7.2585511,58.0,12.46,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.3156,0.145,0.1258,0.465,0.465,0.5,0.333
+37.26037587,-7.20910658,24.0,15.13,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.0272,0.08,0.0841,0.442,0.442,0.5,0.343
+37.25341864,-7.23493343,46.0,3.0,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.2345,0.17,0.0841,0.349,0.349,0.5,0.37
+37.25287154,-7.24298523,64.0,9.08,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.7212,0.175,0.0841,0.442,0.442,0.5,0.489
+37.2620304,-7.26632826,23.0,10.13,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.2213,0.171,0.1258,0.14,0.14,0.5,0.328
+37.28703235,-7.24798767,43.0,8.02,Pozo con galería o taladro horizontal,Huelva,Lepe,Abastecimiento y agricultura,1,,0.3493,0.154,0.0841,0.535,0.535,0.5,0.337
+37.28508581,-7.24132146,37.0,4.15,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.4869,0.143,0.0841,0.419,0.419,0.5,0.393
+37.25480951,-7.20993766,15.0,10.93,Pozo,Huelva,Lepe,Agricultura,1,,0.0942,0.105,0.0841,0.233,0.233,0.5,0.246
+37.27870387,-7.19520485,26.0,15.51,Pozo,Huelva,Lepe,Agricultura,1,,0.2228,0.178,0.0841,0.465,0.465,0.5,0.254
+37.25897692,-7.21076348,20.0,12.32,Pozo,Huelva,Lepe,Agricultura,1,,0.2206,0.168,0.0841,0.512,0.512,0.5,0.285
+37.26397306,-7.21215613,27.0,19.81,Pozo,Huelva,Lepe,Agricultura,1,,0.2675,0.142,0.0841,0.116,0.116,0.5,0.298
+37.25174931,-7.27020604,13.0,10.73,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.5736,0.186,0.1258,0.372,0.372,0.5,0.409
+37.25841389,-7.1974264,23.0,11.68,Pozo,Huelva,Lepe,Agricultura,1,,0.0895,0.178,0.0841,0.442,0.442,0.5,0.35
+37.25425321,-7.19882235,13.0,8.02,Pozo,Huelva,Lepe,Agricultura,1,,0.0684,0.157,0.0841,0.442,0.442,0.5,0.353
+37.2556357,-7.1996463,17.0,7.82,Pozo,Huelva,Lepe,Agricultura,1,,0.106,0.169,0.0841,0.372,0.372,0.5,0.334
+37.25674851,-7.1999242,21.0,13.44,Pozo,Huelva,Lepe,Agricultura,1,,0.0875,0.159,0.0841,0.372,0.372,0.5,0.353
+37.25008111,-7.20658847,16.0,9.6,Pozo,Huelva,Lepe,Agricultura,1,,-0.0395,0.347,0.0841,0.442,0.442,0.5,0.291
+37.2500884,-7.21242847,26.0,13.52,Pozo,Huelva,Lepe,Industria,1,,0.1869,0.183,0.0841,0.535,0.535,0.5,0.332
+37.25158755,-7.23543849,44.0,42.54,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.1132,0.143,0.0841,0.326,0.326,0.5,0.397
+37.25173041,-7.21492642,16.0,16.8,Pozo,Huelva,Lepe,Agricultura,1,,0.085,0.064,0.0841,0.186,0.186,0.5,0.318
+37.25564569,-7.21576972,23.0,16.7,Pozo,Huelva,Lepe,Agricultura,1,,0.5035,0.182,0.0841,0.326,0.326,0.5,0.349
+37.25453167,-7.21242477,23.0,15.0,Pozo,Huelva,Lepe,Agricultura,1,,0.1993,0.168,0.0841,0.419,0.419,0.5,0.281
+37.25619668,-7.21047982,20.0,11.65,Pozo,Huelva,Lepe,Agricultura,1,,0.1824,0.159,0.0841,0.465,0.465,0.5,0.288
+37.25509186,-7.20715727,19.0,6.0,Pozo,Huelva,Lepe,Agricultura,1,,0.0691,0.173,0.0841,0.372,0.372,0.5,0.357
+37.26813747,-7.18908597,22.0,22.5,Pozo,Huelva,Lepe,Agricultura,1,,0.1589,0.0,0.0841,0.465,0.465,0.5,0.282
+37.27313641,-7.1877029,29.0,18.9,Pozo,Huelva,Lepe,Agricultura,1,,0.3077,0.188,0.0841,0.419,0.419,0.5,0.332
+37.27786249,-7.19381516,23.0,16.3,Pozo,Huelva,Lepe,Agricultura,1,,0.1709,0.028,0.0841,0.395,0.395,0.5,0.218
+37.28008379,-7.19881493,33.0,30.0,Pozo,Huelva,Lepe,Agricultura,1,,0.212,0.135,0.0841,0.628,0.628,0.5,0.247
+37.28036326,-7.19881954,33.0,19.0,Pozo,Huelva,Lepe,Agricultura,1,,0.2351,0.155,0.0841,0.581,0.581,0.5,0.252
+37.2809189,-7.19743023,24.0,14.14,Pozo,Huelva,Lepe,Agricultura,1,,0.184,0.101,0.0841,0.349,0.349,0.5,0.294
+37.28119564,-7.19548361,22.0,11.0,Pozo,Huelva,Lepe,Agricultura,1,,0.2819,0.171,0.0841,0.302,0.302,0.5,0.263
+37.28731439,-7.22159708,33.0,6.73,Pozo,Huelva,Lepe,Desconocido,0,,0.1162,0.139,0.0841,0.535,0.535,0.5,0.276
+37.26536039,-7.21270966,29.0,60.0,Pozo,Huelva,Lepe,No se utiliza,0,,0.2343,0.094,0.0841,0.302,0.302,0.5,0.269
+37.2537019,-7.19104449,14.0,20.0,Pozo,Huelva,Lepe,Agricultura,1,,0.2483,0.163,0.0841,0.256,0.256,0.5,0.292
+37.25231282,-7.20992919,22.0,8.27,Pozo,Huelva,Lepe,Agricultura,1,,0.038,0.122,0.0841,0.581,0.581,0.5,0.29
+37.2506412,-7.19187319,13.0,9.17,Pozo,Huelva,Lepe,Agricultura,1,,0.1739,0.12,0.0841,0.372,0.372,0.5,0.34
+37.25119938,-7.18771078,16.0,6.5,Pozo,Huelva,Lepe,Agricultura,1,,0.1615,0.189,0.0841,0.558,0.558,0.5,0.268
+37.25231017,-7.19020967,12.0,8.72,Pozo,Huelva,Lepe,Agricultura,1,,0.5129,0.17,0.0841,0.372,0.372,0.5,0.332
+37.25342338,-7.18992367,13.0,8.3,Pozo,Huelva,Lepe,Agricultura,1,,0.325,0.149,0.0841,0.349,0.349,0.5,0.354
+37.26203339,-7.19659576,30.0,19.6,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.0799,0.154,0.0841,0.512,0.512,0.5,0.247
+37.25841288,-7.19854272,22.0,11.6,Pozo,Huelva,Lepe,Agricultura,1,,0.0379,0.112,0.0841,0.535,0.535,0.5,0.368
+37.26258224,-7.21853764,25.0,23.0,Pozo,Huelva,Lepe,Agricultura,1,,0.1885,0.16,0.0841,0.302,0.302,0.5,0.264
+37.25229165,-7.1954867,13.0,12.0,Pozo,Huelva,Lepe,Agricultura,1,,0.0262,0.023,0.0841,0.326,0.326,0.5,0.234
+37.25330886,-7.23361683,44.0,55.0,Pozo con sondeo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.2229,0.177,0.0841,0.349,0.349,0.5,0.367
+37.25356675,-7.19104773,15.0,10.0,Pozo con sondeo,Huelva,Lepe,Agricultura,1,,0.1469,0.174,0.0841,0.326,0.326,0.5,0.286
+37.26658739,-7.18791653,16.0,19.3,Pozo,Huelva,Lepe,Agricultura,1,,0.3185,0.179,0.0841,0.279,0.279,0.5,0.432
+37.26463562,-7.20769744,34.0,52.0,Pozo con sondeo,Huelva,Lepe,Agricultura,1,,0.3742,0.147,0.0841,0.628,0.628,0.5,0.311
+37.28508654,-7.2184913,26.0,15.0,Pozo,Huelva,Lepe,Agricultura,1,,0.2118,0.176,0.0841,0.349,0.349,0.5,0.304
+37.25899017,-7.26674762,19.0,20.0,Pozo,Huelva,Lepe,Agricultura,1,,0.3355,0.18,0.1258,0.279,0.279,0.5,0.446
+37.284914,-7.21840514,26.0,5.0,Pozo,Huelva,Lepe,No se utiliza,0,,0.221,0.155,0.0841,0.372,0.372,0.5,0.304
+37.28500681,-7.21559431,26.0,10.5,Pozo,Huelva,Lepe,Agricultura,1,,0.1786,0.166,0.0841,0.0,0.0,0.5,0.316
+37.28655433,-7.20945527,18.0,15.0,Pozo,Huelva,Lepe,Agricultura,1,,0.4922,0.174,0.0841,0.326,0.326,0.5,0.399
+37.28670234,-7.20495106,28.0,16.0,Pozo,Huelva,Lepe,Agricultura,1,,0.3685,0.16,0.0841,0.535,0.535,0.5,0.306
+37.287365,-7.20526241,20.0,14.88,Pozo,Huelva,Lepe,Desconocido,0,,0.538,0.133,0.0841,0.349,0.349,0.5,0.352
+37.2864954,-7.20438072,29.0,18.9,Pozo,Huelva,Lepe,Agricultura,1,,0.4044,0.161,0.0841,0.256,0.256,0.5,0.332
+37.29052095,-7.19529433,17.0,8.0,Pozo,Huelva,Lepe,Agricultura,1,,0.1825,0.174,0.0841,0.326,0.326,0.5,0.311
+37.29212715,-7.19424062,11.0,0.0,Pozo,Huelva,Lepe,Agricultura,1,,0.2582,0.126,0.0841,0.419,0.419,0.5,0.413
+37.2786464,-7.21696287,43.0,9.0,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.1989,0.073,0.0841,0.372,0.372,0.5,0.276
+37.25850196,-7.26787513,18.0,0.0,Pozo,Huelva,Lepe,No se utiliza,0,,0.6747,0.187,0.1258,0.395,0.395,0.5,0.466
+37.25781658,-7.23370306,66.0,5.5,Pozo,Huelva,Lepe,Desconocido,0,,0.2907,0.166,0.0841,0.349,0.349,0.5,0.349
+37.274331,-7.21111002,47.0,0.0,Pozo,Huelva,Lepe,Agricultura,1,,0.3916,0.171,0.0841,0.302,0.302,0.5,0.353
+37.27803115,-7.19778119,32.0,18.0,Pozo,Huelva,Lepe,No se utiliza,0,,0.362,0.084,0.0841,0.442,0.442,0.5,0.337
+37.27739162,-7.1966235,31.0,0.0,Pozo,Huelva,Lepe,Agricultura,1,,0.4074,0.082,0.0841,0.349,0.349,0.5,0.334
+37.27824298,-7.19158416,17.0,18.19,Pozo,Huelva,Lepe,Agricultura,1,,0.1604,0.101,0.0841,0.302,0.302,0.5,0.296
+37.27788399,-7.18873929,13.0,16.0,Pozo,Huelva,Lepe,Agricultura,1,,0.31,0.135,0.0841,0.419,0.419,0.5,0.409
+37.2759328,-7.1931621,32.0,17.86,Pozo,Huelva,Lepe,Agricultura,1,,0.4403,0.179,0.0841,0.535,0.535,0.5,0.394
+37.25436286,-7.19773733,12.0,13.0,Pozo,Huelva,Lepe,Agricultura,1,,0.4426,0.165,0.0841,0.535,0.535,0.5,0.399
+37.26400875,-7.19906323,27.0,40.0,Pozo,Huelva,Lepe,Agricultura,1,,0.113,0.169,0.0841,0.395,0.395,0.5,0.311
+37.26237516,-7.19418575,28.0,27.0,Pozo,Huelva,Lepe,Agricultura,1,,0.1922,0.153,0.0841,0.465,0.465,0.5,0.215
+37.22009613,-7.38383465,6.0,4.34,Pozo,Huelva,Ayamonte,Ganadería,1,,0.2587,0.159,0.0573,0.349,0.349,0.5,0.384
+37.22230531,-7.37994418,9.0,5.53,Pozo,Huelva,Ayamonte,Abastecimiento y ganadería,1,,0.5054,0.135,0.0573,0.465,0.465,0.5,0.416
+37.22703493,-7.37188533,17.0,11.98,Pozo,Huelva,Ayamonte,Abastecimiento (que no sea núcleo urbano),1,,0.1406,0.165,0.0573,0.209,0.209,0.5,0.423
+37.22981222,-7.3621657,42.0,26.36,Pozo,Huelva,Ayamonte,Abastecimiento (que no sea núcleo urbano),1,,0.47,0.179,0.0573,0.442,0.442,0.5,0.463
+37.22675489,-7.37577993,17.0,4.39,Pozo,Huelva,Ayamonte,Abastecimiento (que no sea núcleo urbano),1,,0.3538,0.147,0.0573,0.326,0.326,0.5,0.353
+37.22564324,-7.37687456,13.0,8.23,Pozo,Huelva,Ayamonte,Agricultura y ganadería,1,,0.2518,0.184,0.0573,0.326,0.326,0.5,0.36
+37.22814234,-7.40493189,14.0,8.43,Pozo,Huelva,Ayamonte,Agricultura y ganadería,1,,0.2118,0.158,0.0573,0.326,0.326,0.5,0.308
+37.23008794,-7.40216307,15.0,9.71,Pozo,Huelva,Ayamonte,Desconocido,0,,0.177,0.152,0.0573,0.442,0.442,0.5,0.259
+37.23258832,-7.39910056,5.0,4.5,Pozo,Huelva,Ayamonte,Agricultura,1,,0.1705,0.176,0.0573,0.488,0.488,0.5,0.333
+37.23147812,-7.39631736,16.0,6.99,Pozo,Huelva,Ayamonte,Desconocido,0,,0.2642,0.164,0.0573,0.698,0.698,0.5,0.351
+37.23314112,-7.39465888,5.0,5.38,Pozo,Córdoba,Benamejí,Agricultura,1,,0.1812,0.168,0.0573,0.349,0.349,0.5,0.359
+37.23452671,-7.39049248,6.0,6.0,Pozo,Huelva,Ayamonte,Agricultura y ganadería,1,,0.4837,0.172,0.0573,0.372,0.372,0.5,0.441
+37.23508454,-7.38909409,4.0,5.5,Pozo,Huelva,Ayamonte,Agricultura y ganadería,1,,0.3178,0.168,0.0573,0.279,0.279,0.5,0.433
+37.23397191,-7.38548812,17.0,14.06,Pozo,Huelva,Ayamonte,Agricultura,1,,0.1928,0.162,0.0573,0.233,0.233,0.5,0.373
+37.23563932,-7.38548632,10.0,10.15,Pozo,Huelva,Ayamonte,Agricultura,1,,0.0561,0.119,0.0573,0.419,0.419,0.5,0.366
+37.23674894,-7.38159607,8.0,8.0,Pozo,Huelva,Ayamonte,Desconocido,0,,-0.0053,1.0,0.0573,0.349,0.349,0.5,0.367
+37.23730589,-7.37882231,22.0,5.9,Pozo,Huelva,Ayamonte,Agricultura,1,,0.508,0.173,0.0573,0.302,0.302,0.5,0.396
+37.23896944,-7.37853861,9.0,4.0,Pozo,Huelva,Ayamonte,Agricultura,1,,0.3168,0.16,0.0573,0.279,0.279,0.5,0.369
+37.23897137,-7.37604723,14.0,0.0,Pozo,Huelva,Ayamonte,Abastecimiento y agricultura,1,,0.3866,0.173,0.0573,0.14,0.14,0.5,0.398
+37.21731165,-7.40383048,34.0,13.9,Pozo,Huelva,Ayamonte,Agricultura,1,,0.083,0.176,0.0573,0.558,0.558,0.5,0.39
+37.21953343,-7.39548875,18.0,11.6,Pozo,Huelva,Ayamonte,Agricultura,1,,0.093,0.18,0.0573,0.047,0.047,0.5,0.447
+37.21898059,-7.393269,6.0,7.41,Pozo,Huelva,Ayamonte,Agricultura,1,,0.1634,0.17,0.0573,0.326,0.326,0.5,0.337
+37.21776522,-7.39270878,4.0,6.95,Pozo,Huelva,Ayamonte,Agricultura,1,,0.1724,0.177,0.0573,0.372,0.372,0.5,0.369
+37.21924771,-7.38771842,8.0,24.77,Pozo,Huelva,Ayamonte,"Agricultura, industria y ganadería",1,,0.3518,0.168,0.0573,0.419,0.419,0.5,0.356
+37.21869457,-7.38548748,3.0,7.21,Pozo,Huelva,Ayamonte,Agricultura,1,,0.2859,0.164,0.0573,0.372,0.372,0.5,0.393
+37.21730945,-7.38437879,3.0,7.23,Pozo,Huelva,Ayamonte,"Agricultura, industria y ganadería",1,,0.2161,0.178,0.0573,0.372,0.372,0.5,0.462
+37.21869798,-7.38243323,4.0,7.0,Pozo,Huelva,Ayamonte,Agricultura,1,,0.2774,0.171,0.0573,0.465,0.465,0.5,0.474
+37.22008517,-7.38105114,6.0,8.72,Pozo,Huelva,Ayamonte,Agricultura,1,,0.5532,0.17,0.0573,0.279,0.279,0.5,0.445
+37.22018107,-7.37160463,14.0,8.4,Pozo,Huelva,Ayamonte,Agricultura,1,,0.3532,0.178,0.0573,0.698,0.698,0.5,0.488
+37.22248799,-7.35915733,7.0,12.0,Pozo,Huelva,Ayamonte,Abastecimiento (que no sea núcleo urbano),1,,0.2714,0.179,0.0573,0.442,0.442,0.5,0.558
+37.24398156,-7.27215387,8.0,13.0,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.1527,0.16,0.1033,0.372,0.372,0.5,0.337
+37.23981125,-7.27604824,15.0,6.88,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.2842,0.149,0.1033,0.535,0.535,0.5,0.406
+37.2239766,-7.34049448,13.0,4.91,Pozo,Huelva,Ayamonte,Abastecimiento (que no sea núcleo urbano),1,,0.4243,0.176,0.1033,0.372,0.372,0.5,0.44
+37.24342979,-7.31326991,45.0,45.21,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.1931,0.183,0.1033,0.442,0.442,0.5,0.344
+37.23814782,-7.30882233,37.0,38.0,Pozo,Huelva,Isla Cristina,Abastecimiento y ganadería,1,,0.1304,0.145,0.1033,0.326,0.326,0.5,0.365
+37.22591854,-7.31271392,17.0,4.71,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.1659,0.177,0.1033,0.326,0.326,0.5,0.384
+37.19870446,-7.30994068,5.0,3.7,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1649,0.156,0.1033,0.372,0.372,0.5,0.524
+37.20065363,-7.2893796,9.0,5.8,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.3315,0.169,0.1033,0.814,0.814,0.5,0.438
+37.19897585,-7.29992957,11.0,3.05,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.4979,0.173,0.1033,0.395,0.395,0.5,0.617
+37.21953618,-7.30631973,8.0,7.86,Pozo,Huelva,Isla Cristina,Abastecimiento y agricultura,1,,0.3345,0.178,0.1033,0.256,0.256,0.5,0.429
+37.21814198,-7.28771071,10.0,3.81,Pozo,Huelva,Isla Cristina,Abastecimiento y ganadería,1,,0.5937,0.176,0.1033,0.535,0.535,0.5,0.525
+37.22037245,-7.27743823,2.0,5.05,Pozo,Huelva,Isla Cristina,Abastecimiento y ganadería,1,,0.3988,0.177,0.1033,0.302,0.302,0.5,0.425
+37.24481626,-7.30243866,39.0,4.45,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.2754,0.18,0.1033,0.372,0.372,0.5,0.321
+37.23536452,-7.30327097,33.0,7.23,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.199,0.063,0.1033,0.628,0.628,0.5,0.404
+37.22509489,-7.30049217,26.0,5.13,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.2105,0.121,0.1033,0.395,0.395,0.5,0.453
+37.23036542,-7.31548893,27.0,20.24,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.1394,0.182,0.1033,0.419,0.419,0.5,0.403
+37.22230727,-7.32244202,11.0,6.13,Pozo,Huelva,Isla Cristina,Abastecimiento y agricultura,1,,0.1032,0.173,0.1033,0.558,0.558,0.5,0.442
+37.22342264,-7.31466309,9.0,0.0,Pozo,Huelva,Isla Cristina,Abastecimiento a núcleos urbanos,1,,0.1734,0.182,0.1033,0.465,0.465,0.5,0.401
+37.21342891,-7.28465077,6.0,4.91,Pozo,Huelva,Isla Cristina,Ganadería,1,,0.4485,0.176,0.1033,0.395,0.395,0.5,0.484
+37.24786156,-7.30992397,54.0,0.0,Pozo,Huelva,Isla Cristina,Abastecimiento e industria,1,,0.3929,0.189,0.1033,0.419,0.419,0.5,0.488
+37.22286198,-7.31326677,3.0,6.32,Pozo,Huelva,Isla Cristina,Abastecimiento y agricultura,1,,0.3488,0.185,0.1033,0.395,0.395,0.5,0.47
+37.21870067,-7.2977057,8.0,21.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.2324,0.119,0.1033,0.326,0.326,0.5,0.364
+37.2128592,-7.29826537,7.0,5.67,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1448,0.124,0.1033,0.465,0.465,0.5,0.339
+37.2150905,-7.29798979,6.0,5.7,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1629,0.059,0.1033,0.372,0.372,0.5,0.344
+37.22187001,-7.2824983,12.0,12.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.3036,0.094,0.1033,0.349,0.349,0.5,0.426
+37.20286076,-7.29492967,7.0,5.03,Pozo,Huelva,Isla Cristina,Abastecimiento y agricultura,1,,0.3424,0.177,0.1033,0.605,0.605,0.5,0.468
+37.22341408,-7.27216195,9.0,5.5,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.4578,0.155,0.1033,0.419,0.419,0.5,0.468
+37.22064291,-7.2718759,10.0,9.2,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.166,0.171,0.1033,0.605,0.605,0.5,0.413
+37.23397507,-7.31326677,36.0,27.1,Pozo,Huelva,Isla Cristina,Abastecimiento y agricultura,1,,0.2162,0.176,0.1033,0.349,0.349,0.5,0.376
+37.22647994,-7.28714994,20.0,0.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.3264,0.178,0.1033,0.605,0.605,0.5,0.435
+37.21940015,-7.27132953,7.0,15.0,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.292,0.154,0.1033,0.512,0.512,0.5,0.395
+37.21905943,-7.27949672,6.0,0.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1932,0.127,0.1033,0.488,0.488,0.5,0.39
+37.2172746,-7.28010079,5.0,0.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.3563,0.145,0.1033,0.395,0.395,0.5,0.437
+37.23972506,-7.27508073,9.0,0.0,Pozo con sondeo,Huelva,Lepe,Agricultura,1,,0.277,0.171,0.1033,0.512,0.512,0.5,0.373
+37.23748077,-7.2756956,6.0,9.1,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.2143,0.177,0.1033,0.581,0.581,0.5,0.437
+37.23282836,-7.28115593,10.0,20.3,Pozo con sondeo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.5564,0.175,0.1033,0.372,0.372,0.5,0.371
+37.21505224,-7.29846396,5.0,10.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1948,0.115,0.1033,0.442,0.442,0.5,0.367
+37.21375014,-7.30131053,9.0,5.5,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.2041,0.099,0.1033,0.465,0.465,0.5,0.384
+37.21469056,-7.3046702,9.0,8.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1861,0.147,0.1033,0.372,0.372,0.5,0.459
+37.2353722,-7.30758812,35.0,7.0,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.1951,0.169,0.1033,0.326,0.326,0.5,0.346
+37.22432731,-7.34559245,17.0,12.0,Pozo,Huelva,Ayamonte,Abastecimiento y agricultura,1,,0.2606,0.162,0.1033,0.395,0.395,0.5,0.477
+37.22379798,-7.33996868,12.0,10.5,Pozo,Huelva,Ayamonte,No se utiliza,0,,0.2154,0.179,0.1033,0.442,0.442,0.5,0.437
+37.2242327,-7.33883205,21.0,66.0,Pozo con sondeo,Huelva,Ayamonte,No se utiliza,0,,0.3361,0.18,0.1033,0.419,0.419,0.5,0.433
+37.2242169,-7.33770533,16.0,98.0,Pozo con sondeo,Huelva,Ayamonte,No se utiliza,0,,0.2485,0.187,0.1033,0.349,0.349,0.5,0.438
+37.21827704,-7.3319192,0.0,2.5,Pozo,Huelva,Isla Cristina,Desconocido,0,,0.0587,0.004,0.1033,0.163,0.163,0.5,0.671
+37.22307751,-7.32082451,8.0,8.0,Pozo con sondeo,Huelva,Ayamonte,Agricultura,1,,0.5162,0.148,0.1033,0.279,0.279,0.5,0.393
+37.22486358,-7.31965775,6.0,12.0,Pozo con sondeo,Huelva,Ayamonte,Agricultura,1,,0.1912,0.156,0.1033,0.512,0.512,0.5,0.417
+37.2257166,-7.31625751,15.0,15.0,Pozo,Huelva,Ayamonte,Desconocido,0,,0.2465,0.175,0.1033,0.279,0.279,0.5,0.403
+37.20231254,-7.28691961,7.0,2.5,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.5641,0.173,0.1033,0.349,0.349,0.5,0.433
+37.23675371,-7.26910648,14.0,8.59,Pozo,Huelva,Isla Cristina,Abastecimiento (que no sea núcleo urbano),1,,0.2416,0.154,0.1033,0.442,0.442,0.5,0.316
+37.22397915,-7.26827194,7.0,6.55,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.2447,0.15,0.1033,0.279,0.279,0.5,0.358
+37.23315361,-7.25410704,31.0,2.73,Pozo,Huelva,Isla Cristina,Abastecimiento y ganadería,1,,0.1042,0.152,0.1033,0.581,0.581,0.5,0.474
+37.24093413,-7.24938419,55.0,3.88,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.405,0.128,0.0306,0.512,0.512,0.5,0.404
+37.21204056,-7.27161038,2.0,4.89,Pozo,Huelva,Isla Cristina,Abastecimiento y ganadería,1,,0.4331,0.169,0.1033,0.395,0.395,0.5,0.447
+37.24171769,-7.19299989,15.0,9.08,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.1157,0.149,0.0306,0.651,0.651,0.5,0.279
+37.24842856,-7.2010357,16.0,12.61,Pozo,Huelva,Lepe,Abastecimiento y agricultura,1,,0.0784,0.162,0.0306,0.465,0.465,0.5,0.361
+37.21119505,-7.21882458,9.0,24.33,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.4228,0.15,0.0306,0.395,0.395,0.5,0.505
+37.20620542,-7.20771917,5.0,4.0,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.0877,0.175,0.0306,0.279,0.279,0.5,0.468
+37.20509196,-7.21993726,7.0,6.0,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.0861,0.16,0.0306,0.326,0.326,0.5,0.483
+37.22314495,-7.20799402,48.0,2.76,Pozo,Huelva,Lepe,Desconocido,0,,0.4035,0.175,0.0306,0.651,0.651,0.5,0.466
+37.23036609,-7.23993548,40.0,5.37,Pozo,Huelva,Lepe,Abastecimiento y ganadería,1,,0.3497,0.164,0.0306,0.395,0.395,0.5,0.43
+37.20758688,-7.23910206,12.0,13.65,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.3194,0.164,0.0306,0.372,0.372,0.5,0.593
+37.2070418,-7.26938079,2.0,5.65,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.18,0.15,0.1033,0.302,0.302,0.5,0.305
+37.20759678,-7.25438144,6.0,16.64,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1785,0.158,0.1033,0.465,0.465,0.5,0.332
+37.22062679,-7.2707718,7.0,5.23,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1027,0.164,0.1033,0.349,0.349,0.5,0.385
+37.22730836,-7.26604289,15.0,14.7,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.2702,0.179,0.1033,0.442,0.442,0.5,0.354
+37.2284233,-7.26770801,17.0,11.07,Pozo,Huelva,Isla Cristina,Abastecimiento y agricultura,1,,0.2831,0.129,0.1033,0.651,0.651,0.5,0.361
+37.2325845,-7.26382528,20.0,141.3,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.5323,0.103,0.1033,0.395,0.395,0.5,0.475
+37.2323128,-7.26742724,9.0,6.48,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.3242,0.16,0.1033,0.442,0.442,0.5,0.379
+37.23564548,-7.26297716,21.0,11.92,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1237,0.16,0.1033,0.442,0.442,0.5,0.392
+37.23452611,-7.26716233,12.0,9.7,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.216,0.184,0.1033,0.558,0.558,0.5,0.309
+37.23675187,-7.26159903,17.0,11.88,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1566,0.129,0.1033,0.279,0.279,0.5,0.38
+37.24759029,-7.26992924,14.0,9.35,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.4815,0.18,0.1033,0.558,0.558,0.5,0.525
+37.24341644,-7.27048704,11.0,7.8,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1934,0.131,0.1033,0.395,0.395,0.5,0.396
+37.23008249,-7.25548547,22.0,27.23,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.2314,0.123,0.1033,0.302,0.302,0.5,0.371
+37.21508218,-7.24797684,11.0,16.15,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.2636,0.173,0.0306,0.581,0.581,0.5,0.34
+37.23119616,-7.26687798,15.0,8.9,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.4994,0.18,0.1033,0.628,0.628,0.5,0.444
+37.21841893,-7.26771181,10.0,0.0,Pozo,Huelva,Isla Cristina,Desconocido,0,,0.1788,0.144,0.1033,0.372,0.372,0.5,0.329
+37.2223088,-7.26437685,18.0,14.06,Pozo,Huelva,Isla Cristina,Desconocido,0,,0.3186,0.156,0.1033,0.326,0.326,0.5,0.323
+37.22009041,-7.26798909,10.0,10.09,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1175,0.139,0.1033,0.372,0.372,0.5,0.43
+37.21389248,-7.26635047,10.0,9.1,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1113,0.163,0.1033,0.465,0.465,0.5,0.299
+37.22286235,-7.26771146,10.0,7.92,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1247,0.157,0.1033,0.372,0.372,0.5,0.405
+37.20730566,-7.2560333,5.0,12.82,Pozo,Huelva,Lepe,Agricultura,1,,0.1748,0.161,0.1033,0.419,0.419,0.5,0.3
+37.24952989,-7.19937469,13.0,6.83,Pozo,Huelva,Lepe,Agricultura,1,,0.3192,0.162,0.0306,0.302,0.302,0.5,0.316
+37.2417547,-7.19188296,11.0,9.11,Pozo,Huelva,Lepe,Desconocido,0,,0.1419,0.153,0.0306,0.419,0.419,0.5,0.331
+37.24731173,-7.19103969,8.0,6.26,Pozo,Huelva,Lepe,Agricultura,1,,0.3649,0.161,0.0306,0.558,0.558,0.5,0.453
+37.24397907,-7.1888197,9.0,5.12,Pozo,Huelva,Lepe,Agricultura,1,,0.2516,0.153,0.0306,0.512,0.512,0.5,0.328
+37.24730462,-7.18880761,4.0,7.62,Pozo,Huelva,Lepe,Agricultura,1,,0.6879,0.18,0.0306,0.349,0.349,0.5,0.443
+37.2473076,-7.19076921,8.0,4.7,Pozo,Huelva,Lepe,Agricultura,1,,0.5508,0.145,0.0306,0.442,0.442,0.5,0.453
+37.24119708,-7.20854671,21.0,22.0,Pozo,Huelva,Lepe,Agricultura,1,,0.1413,0.144,0.0306,0.372,0.372,0.5,0.321
+37.24953085,-7.20299374,14.0,14.35,Pozo,Huelva,Lepe,Agricultura,1,,0.0835,0.172,0.0306,0.465,0.465,0.5,0.345
+37.23869648,-7.18992705,11.0,15.48,Pozo,Huelva,Lepe,Agricultura,1,,0.1974,0.163,0.0306,0.419,0.419,0.5,0.365
+37.22042736,-7.26453273,16.0,29.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.2171,0.162,0.1033,0.372,0.372,0.5,0.341
+37.21883747,-7.26428746,19.0,24.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.2182,0.166,0.1033,0.512,0.512,0.5,0.376
+37.2095368,-7.25943002,10.0,27.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.3145,0.153,0.1033,0.465,0.465,0.5,0.391
+37.2096393,-7.26703388,3.0,14.5,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.2208,0.163,0.1033,0.419,0.419,0.5,0.467
+37.20789717,-7.25580557,6.0,10.0,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.247,0.166,0.1033,0.442,0.442,0.5,0.306
+37.21213766,-7.26838527,6.0,13.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.2672,0.176,0.1033,0.395,0.395,0.5,0.351
+37.208168,-7.2588981,4.0,0.0,Pozo con sondeo,Huelva,Isla Cristina,No se utiliza,0,,0.5245,0.104,0.1033,0.326,0.326,0.5,0.427
+37.2074042,-7.26765975,5.0,5.0,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.3984,0.154,0.1033,0.442,0.442,0.5,0.401
+37.22537458,-7.26385563,12.0,13.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.2732,0.166,0.1033,0.302,0.302,0.5,0.302
+37.22261799,-7.24560455,18.0,19.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.3729,0.174,0.0306,0.256,0.256,0.5,0.365
+37.23162382,-7.24512499,49.0,50.0,Pozo,Huelva,Isla Cristina,No se utiliza,0,,0.5687,0.176,0.0306,0.558,0.558,0.5,0.345
+37.23095229,-7.26930698,9.0,22.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.1776,0.183,0.1033,0.442,0.442,0.5,0.382
+37.22631987,-7.26439747,14.0,20.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.1291,0.073,0.1033,0.442,0.442,0.5,0.329
+37.22542713,-7.2649815,14.0,18.5,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.2286,0.174,0.1033,0.512,0.512,0.5,0.339
+37.22279009,-7.2695502,11.0,18.0,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.1131,0.167,0.1033,0.465,0.465,0.5,0.376
+37.21961189,-7.26793243,11.0,26.0,Pozo con sondeo,Huelva,Isla Cristina,Abastecimiento y agricultura,1,,0.1302,0.119,0.1033,0.535,0.535,0.5,0.402
+37.22064834,-7.2464955,18.0,19.0,Pozo,Huelva,Isla Cristina,Agricultura,1,,0.1534,0.17,0.0306,0.302,0.302,0.5,0.31
+37.20786585,-7.26594768,5.0,4.3,Pozo,Huelva,Lepe,No se utiliza,0,,0.2765,0.169,0.1033,0.558,0.558,0.5,0.388
+37.20965961,-7.26534315,5.0,14.5,Pozo con sondeo,Huelva,Isla Cristina,Agricultura,1,,0.2014,0.16,0.1033,0.465,0.465,0.5,0.366
+37.21192862,-7.26641801,6.0,5.0,Pozo,Huelva,Isla Cristina,Desconocido,0,,0.1992,0.16,0.1033,0.349,0.349,0.5,0.376
+37.24878552,-7.19961792,13.0,7.0,Pozo,Huelva,Lepe,Abastecimiento (que no sea núcleo urbano),1,,0.257,0.17,0.0306,0.419,0.419,0.5,0.345
+37.24599676,-7.19404747,12.0,11.0,Pozo,Huelva,Lepe,Agricultura,1,,0.1743,0.169,0.0306,0.302,0.302,0.5,0.347
+37.24367547,-7.18959357,12.0,12.9,Pozo,Huelva,Lepe,Agricultura,1,,0.4329,0.145,0.0306,0.326,0.326,0.5,0.333
+37.23692694,-7.19031888,8.0,8.96,Pozo,Huelva,Lepe,Desconocido,0,,0.6097,0.182,0.0306,0.326,0.326,0.5,0.428
+37.23344351,-7.19829267,21.0,19.42,Pozo,Huelva,Lepe,Desconocido,0,,0.3785,0.138,0.0306,0.651,0.651,0.5,0.321
+37.22535203,-7.1996126,27.0,1.0,Pozo,Huelva,Lepe,Desconocido,0,,0.1316,0.181,0.0306,0.767,0.767,0.5,0.33
+37.22753576,-7.19505216,36.0,5.85,Pozo,Huelva,Lepe,No se utiliza,0,,0.2215,0.185,0.0306,0.558,0.558,0.5,0.376
+37.2241715,-7.21091132,43.0,11.0,Pozo,Huelva,Lepe,Desconocido,0,,0.3854,0.17,0.0306,0.256,0.256,0.5,0.402
+37.22181668,-7.20420489,26.0,16.0,Pozo,Huelva,Lepe,Desconocido,0,,0.4559,0.174,0.0306,0.558,0.558,0.5,0.418
+37.21814432,-7.1997842,31.0,20.0,Pozo,Huelva,Lepe,Agricultura,1,,0.3485,0.177,0.0306,0.581,0.581,0.5,0.446
+37.21762519,-7.19528871,9.0,8.0,Pozo,Huelva,Lepe,No se utiliza,0,,0.4699,0.176,0.0306,0.326,0.326,0.5,0.46
+37.21365661,-7.2010179,5.0,3.63,Pozo,Huelva,Lepe,Desconocido,0,,0.2278,0.171,0.0306,0.279,0.279,0.5,0.314
+37.21194869,-7.20725633,5.0,4.5,Pozo,Huelva,Lepe,Desconocido,0,,0.2992,0.106,0.0306,0.256,0.256,0.5,0.375
+37.21153232,-7.20951994,7.0,4.5,Pozo,Huelva,Lepe,Desconocido,0,,0.1498,0.128,0.0306,0.419,0.419,0.5,0.37
+37.21257272,-7.24893646,8.0,10.5,Pozo,Huelva,Isla Cristina,Ganadería,1,,0.232,0.143,0.0306,0.442,0.442,0.5,0.481
+37.23342635,-7.19716588,16.0,14.88,Pozo,Huelva,Lepe,Agricultura,1,,0.3427,0.157,0.0306,0.302,0.302,0.5,0.343
+42.41942737,-6.981933,329.0,12.0,Pozo,Ourense,O Barco de Valdeorras,Abastecimiento y agricultura,1,,0.121,0.168,0.307,0.256,0.256,0.5,0.43
+42.47784653,-6.89537116,486.0,7.0,Pozo,Ourense,Rubiá,Abastecimiento (que no sea núcleo urbano),1,,0.3857,0.169,0.2818,0.884,0.884,0.5,0.555
+42.39542492,-7.09378749,304.0,12.0,Pozo,Ourense,A Rúa,Agricultura,1,,0.575,0.165,0.3148,0.488,0.488,0.5,0.541
+39.62375114,-7.09767003,297.0,4.0,Pozo,Cáceres,Membrío,Abastecimiento (que no sea núcleo urbano),1,,0.2025,0.163,0.1484,0.651,0.651,0.5,0.17
+39.52882354,-7.05712543,329.0,9.5,Pozo,Cáceres,Membrío,No se utiliza,0,,0.1459,0.177,0.1467,0.628,0.628,0.5,0.067
+39.49751055,-6.97658397,308.0,3.0,Pozo,Cáceres,Salorino,No se utiliza,0,,0.1737,0.175,0.1609,0.326,0.326,0.5,0.063
+39.48553057,-7.01962533,323.0,8.0,Pozo,Cáceres,Salorino,No se utiliza,0,,0.2337,0.174,0.1609,0.605,0.605,0.5,0.0
+39.0978956,-6.93917325,242.0,3.4,Pozo,Badajoz,Alburquerque,Abastecimiento (que no sea núcleo urbano),1,,0.1958,0.176,0.1473,0.535,0.535,0.5,0.128
+39.1359131,-6.94964549,268.0,5.0,Pozo,Badajoz,Alburquerque,No se utiliza,0,,0.2582,0.153,0.1473,0.302,0.302,0.5,0.267
+39.08646483,-6.88305453,203.0,8.6,Pozo,Badajoz,Villar del Rey,Abastecimiento (que no sea núcleo urbano),1,,0.3094,0.187,0.1473,0.419,0.419,0.5,0.217
+39.00421887,-6.91889302,180.0,6.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.4451,0.085,0.2327,0.558,0.558,0.5,0.497
+39.0287563,-6.90499304,183.0,10.5,Pozo,Badajoz,Badajoz,Ganadería,1,,0.1692,0.167,0.2327,0.326,0.326,0.5,0.243
+39.07533573,-6.92451422,217.0,9.0,Pozo,Badajoz,Alburquerque,Ganadería,1,,0.2067,0.176,0.1473,0.302,0.302,0.5,0.197
+38.93319011,-7.00799864,190.0,8.5,Pozo,Badajoz,Badajoz,Ganadería,1,,0.3588,0.183,0.1552,0.163,0.163,0.5,0.311
+38.92087946,-6.95834358,169.0,6.3,Pozo,Badajoz,Badajoz,Ganadería,1,,0.1619,0.157,0.1552,0.395,0.395,0.5,0.272
+38.91824234,-6.96262891,172.0,8.3,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.1321,0.172,0.1552,0.628,0.628,0.5,0.272
+38.93872209,-6.94157637,170.0,6.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.7072,0.153,0.2221,0.535,0.535,0.5,0.606
+38.92535406,-6.95352067,165.0,6.0,Pozo,Badajoz,Badajoz,Ganadería,1,,0.5189,0.117,0.1552,0.302,0.302,0.5,0.443
+38.9328892,-6.93934567,168.0,5.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2441,0.094,0.2221,0.372,0.372,0.5,0.3
+38.9195268,-6.95827857,166.0,8.72,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3138,0.178,0.1552,0.116,0.116,0.5,0.426
+38.93992103,-6.94825618,169.0,8.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.5146,0.089,0.2221,0.256,0.256,0.5,0.43
+38.94351517,-6.94871786,174.0,7.58,Pozo,Badajoz,Badajoz,Abastecimiento y agricultura,1,,0.2016,0.174,0.2221,0.302,0.302,0.5,0.392
+38.94316243,-6.95274308,178.0,8.03,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.2719,0.152,0.1552,0.349,0.349,0.5,0.305
+38.92905305,-6.95739395,171.0,11.79,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3372,0.051,0.1552,0.488,0.488,0.5,0.368
+38.95253966,-6.94033412,171.0,5.78,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.4637,0.074,0.2327,0.302,0.302,0.5,0.445
+38.93198095,-6.96406982,175.0,7.4,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.6729,0.177,0.1552,0.419,0.419,0.5,0.349
+38.93320238,-6.96281207,173.0,5.68,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3315,0.173,0.1552,0.349,0.349,0.5,0.362
+38.93509403,-6.9653651,178.0,4.97,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3961,0.162,0.1552,0.419,0.419,0.5,0.369
+38.93702909,-6.96834387,179.0,6.6,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3132,0.18,0.1552,0.581,0.581,0.5,0.315
+38.91904206,-6.95941122,171.0,5.75,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.6386,0.148,0.1552,0.535,0.535,0.5,0.455
+38.91677936,-7.00307173,194.0,17.28,Pozo,Badajoz,Badajoz,Abastecimiento y agricultura,1,,0.1376,0.162,0.1552,0.558,0.558,0.5,0.333
+38.9244276,-6.98883125,182.0,7.17,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3932,0.076,0.1552,0.558,0.558,0.5,0.304
+38.94032637,-7.01064853,206.0,8.94,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.39,0.184,0.1552,0.372,0.372,0.5,0.252
+38.91952862,-6.93840607,177.0,9.9,Pozo,Badajoz,Badajoz,Ganadería,1,,0.0785,0.154,0.2221,0.535,0.535,0.5,0.325
+38.92351371,-6.90017002,174.0,8.7,Pozo,Badajoz,Badajoz,Abastecimiento a núcleos urbanos,1,,0.1436,0.176,0.2221,0.419,0.419,0.5,0.314
+38.98339458,-6.92483659,178.0,6.4,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3437,0.135,0.2327,0.488,0.488,0.5,0.395
+38.97626242,-6.92656857,172.0,7.5,Pozo,Badajoz,Badajoz,No se utiliza,0,,0.3711,0.151,0.2327,0.302,0.302,0.5,0.535
+38.98662535,-6.92664705,177.0,5.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1807,0.166,0.2327,0.419,0.419,0.5,0.44
+38.9776293,-6.93352378,173.0,7.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.6442,0.148,0.2327,0.419,0.419,0.5,0.576
+38.96192205,-6.9308299,172.0,7.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.5261,0.177,0.2327,0.442,0.442,0.5,0.546
+38.91933558,-6.91739751,174.0,9.0,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.2659,0.109,0.2221,0.488,0.488,0.5,0.305
+38.92574136,-6.89878936,170.0,7.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.4056,0.122,0.2221,0.279,0.279,0.5,0.393
+38.92679084,-6.88109872,179.0,11.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3369,0.17,0.2221,0.581,0.581,0.5,0.352
+38.92410615,-6.86628792,177.0,10.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.2534,0.044,0.2221,0.651,0.651,0.5,0.402
+38.97120211,-6.92169545,178.0,0.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2426,0.172,0.2327,0.209,0.209,0.5,0.415
+38.97829491,-6.91826743,178.0,5.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2973,0.044,0.2327,0.326,0.326,0.5,0.396
+38.98058674,-6.91643411,178.0,0.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3039,0.191,0.2327,0.186,0.186,0.5,0.377
+38.97971198,-6.91790269,179.0,0.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3775,0.071,0.2327,0.465,0.465,0.5,0.47
+38.98406448,-6.91390784,186.0,0.0,Pozo,Segovia,Aldehuela del Codonal,Abastecimiento (que no sea núcleo urbano),1,,0.2802,0.188,0.2327,0.302,0.302,0.5,0.257
+38.98417855,-6.91575155,180.0,3.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.4472,0.058,0.2327,0.209,0.209,0.5,0.373
+38.98773829,-6.91176807,192.0,17.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2111,0.182,0.2327,0.535,0.535,0.5,0.217
+38.98789211,-6.92188827,183.0,0.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.4076,0.063,0.2327,0.651,0.651,0.5,0.426
+38.98679914,-6.92375583,181.0,8.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2216,0.182,0.2327,0.442,0.442,0.5,0.342
+38.98904019,-6.92311307,180.0,5.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1883,0.184,0.2327,0.465,0.465,0.5,0.357
+38.99069622,-6.92756727,179.0,0.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3498,0.172,0.2327,0.651,0.651,0.5,0.508
+38.99161932,-6.92881032,174.0,0.0,Pozo,Badajoz,Badajoz,Industria,1,,0.1956,0.176,0.2327,0.442,0.442,0.5,0.38
+38.93215184,-6.88855257,181.0,32.72,Pozo,Badajoz,Badajoz,Ganadería,1,,0.2554,0.158,0.2221,0.419,0.419,0.5,0.208
+38.9301307,-6.891381,186.0,17.2,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.1264,0.159,0.2221,0.628,0.628,0.5,0.338
+38.93162168,-6.88664187,185.0,8.63,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2216,0.188,0.2221,0.651,0.651,0.5,0.318
+38.9277915,-6.90206242,176.0,5.03,Pozo,Badajoz,Badajoz,Ganadería,1,,0.307,0.023,0.2221,0.372,0.372,0.5,0.313
+38.92407624,-6.91344095,176.0,8.07,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.5171,0.167,0.2221,0.442,0.442,0.5,0.504
+38.92038174,-6.9164442,175.0,8.54,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.214,0.179,0.2221,0.442,0.442,0.5,0.322
+38.91810929,-6.92442259,175.0,8.39,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.2071,0.157,0.2221,0.512,0.512,0.5,0.251
+38.91870557,-6.92704637,171.0,12.4,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2204,0.188,0.2221,0.279,0.279,0.5,0.282
+38.91757605,-6.9197787,174.0,11.29,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.4918,0.158,0.2221,0.512,0.512,0.5,0.392
+38.92357009,-6.90230219,174.0,9.73,Pozo,Badajoz,Badajoz,Abastecimiento a núcleos urbanos,1,,0.1114,0.174,0.2221,0.349,0.349,0.5,0.36
+38.93081281,-6.93656807,178.0,9.9,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2691,0.148,0.2221,0.512,0.512,0.5,0.413
+38.93124088,-6.88800283,183.0,8.86,Pozo,Badajoz,Badajoz,No se utiliza,0,,0.2287,0.191,0.2221,0.442,0.442,0.5,0.324
+38.84493266,-7.06573296,161.0,8.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1172,0.148,0.1393,0.442,0.442,0.5,0.415
+38.85187696,-7.05905746,165.0,9.5,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.5323,0.133,0.1469,0.558,0.558,0.5,0.503
+38.85267177,-7.04836559,169.0,9.5,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.6301,0.168,0.1552,0.558,0.558,0.5,0.545
+38.85996866,-7.03378395,166.0,8.5,Pozo,Badajoz,Badajoz,Agricultura,1,,0.229,0.159,0.1552,0.535,0.535,0.5,0.488
+38.85358459,-7.02656201,166.0,10.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.246,0.168,0.1552,0.395,0.395,0.5,0.482
+38.86497684,-7.02462192,166.0,8.0,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.369,0.031,0.1552,0.465,0.465,0.5,0.381
+38.8766419,-7.02655811,164.0,8.0,Pozo,Badajoz,Badajoz,Ganadería,1,,0.1714,0.113,0.1552,0.256,0.256,0.5,0.307
+38.89329783,-7.03378722,176.0,20.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2167,0.171,0.1552,0.326,0.326,0.5,0.248
+38.85581128,-7.02822895,164.0,7.5,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.5653,0.12,0.1552,0.302,0.302,0.5,0.509
+38.8396334,-7.07656787,164.0,14.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.62,0.175,0.1393,0.395,0.395,0.5,0.525
+38.84663563,-7.02378144,168.0,10.0,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.5357,0.102,0.1422,0.558,0.558,0.5,0.439
+38.84496176,-7.04100659,166.0,12.5,Pozo,Badajoz,Badajoz,Agricultura,1,,0.4896,0.12,0.1422,0.535,0.535,0.5,0.407
+38.84077606,-7.0487829,167.0,10.5,Pozo,Badajoz,Badajoz,Agricultura,1,,0.6407,0.135,0.1422,0.628,0.628,0.5,0.533
+38.83802341,-7.03294821,176.0,13.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3939,0.186,0.1422,0.395,0.395,0.5,0.349
+38.85413803,-7.03212391,161.0,6.1,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3693,0.093,0.1552,0.279,0.279,0.5,0.532
+38.85274481,-7.03072196,163.0,6.5,Pozo,Badajoz,Badajoz,Agricultura,1,,0.1771,0.182,0.1552,0.605,0.605,0.5,0.464
+38.86520895,-7.03302872,166.0,7.6,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.6627,0.14,0.1552,0.419,0.419,0.5,0.579
+38.84578772,-7.06785287,157.0,8.4,Pozo,Badajoz,Badajoz,Agricultura,1,,0.3905,0.105,0.1393,0.395,0.395,0.5,0.501
+38.84437024,-7.06822535,160.0,10.2,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.6355,0.126,0.1393,0.465,0.465,0.5,0.574
+38.86386523,-7.02655428,165.0,9.1,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2168,0.184,0.1552,0.419,0.419,0.5,0.349
+38.87119231,-7.01126418,165.0,11.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.3652,0.182,0.1552,0.302,0.302,0.5,0.383
+38.87620341,-7.00132676,167.0,11.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.2172,0.154,0.1552,0.628,0.628,0.5,0.231
+38.88025717,-6.98712675,161.0,7.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.6858,0.179,0.1552,0.419,0.419,0.5,0.553
+38.8786041,-7.01210645,167.0,8.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1657,0.144,0.1552,0.302,0.302,0.5,0.341
+38.85475633,-7.01172225,168.0,10.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.6111,0.125,0.1552,0.372,0.372,0.5,0.56
+38.86055241,-7.00711244,164.0,11.0,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.1222,0.172,0.1552,0.186,0.186,0.5,0.259
+38.86241011,-6.99825589,168.0,12.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1455,0.175,0.1552,0.442,0.442,0.5,0.151
+38.91002648,-6.95601389,164.0,7.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.276,0.177,0.1552,0.233,0.233,0.5,0.389
+38.90281373,-6.96657563,169.0,7.0,Pozo,Badajoz,Badajoz,Industria,1,,0.2625,0.178,0.1552,0.395,0.395,0.5,0.28
+38.90897255,-6.94935562,169.0,7.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.4975,0.132,0.2221,0.651,0.651,0.5,0.567
+38.88757634,-6.95157379,166.0,10.5,Pozo,Badajoz,Badajoz,Agricultura,1,,0.6007,0.123,0.1552,0.465,0.465,0.5,0.511
+38.88092476,-6.94684275,165.0,8.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.0925,0.105,0.2221,0.349,0.349,0.5,0.333
+38.85066669,-6.9390717,185.0,15.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1868,0.187,0.2221,0.721,0.721,0.5,0.238
+38.8670096,-6.95434282,166.0,5.5,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3242,0.174,0.1552,0.256,0.256,0.5,0.303
+38.91077433,-7.00019558,203.0,17.5,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1646,0.15,0.1552,0.395,0.395,0.5,0.28
+38.91035226,-6.95712315,163.0,9.0,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.5966,0.113,0.1552,0.302,0.302,0.5,0.488
+38.88689952,-6.94280866,167.0,8.75,Pozo,Badajoz,Badajoz,Agricultura,1,,0.6166,0.153,0.2221,0.535,0.535,0.5,0.509
+38.88682834,-6.93877581,166.0,9.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.5983,0.111,0.2221,0.209,0.209,0.5,0.498
+38.8810154,-6.94124937,169.0,12.0,Pozo,Badajoz,Badajoz,Agricultura,1,,-0.0208,0.515,0.2221,0.512,0.512,0.5,0.223
+38.87794533,-6.99781985,169.0,10.0,Pozo,Badajoz,Badajoz,Industria,1,,0.4579,0.173,0.1552,0.628,0.628,0.5,0.312
+38.87535212,-7.00423226,165.0,10.1,Pozo,Badajoz,Badajoz,Agricultura,1,,0.2369,0.178,0.1552,0.512,0.512,0.5,0.243
+38.874016,-7.00513412,165.0,9.0,Pozo,Badajoz,Badajoz,Ganadería,1,,0.2927,0.186,0.1552,0.791,0.791,0.5,0.444
+38.87053158,-7.01214703,164.0,10.0,Pozo,Badajoz,Badajoz,Agricultura,1,,0.5916,0.138,0.1552,0.442,0.442,0.5,0.391
+38.86384258,-6.98986032,171.0,12.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.3022,0.165,0.1552,0.488,0.488,0.5,0.329
+38.8629767,-6.99190151,172.0,14.5,Pozo,Badajoz,Badajoz,Agricultura,1,,0.2951,0.156,0.1552,0.442,0.442,0.5,0.267
+38.86479274,-6.99271475,168.0,12.8,Pozo,Badajoz,Badajoz,Agricultura,1,,0.2061,0.148,0.1552,0.349,0.349,0.5,0.252
+38.85541215,-7.01055165,164.0,11.1,Pozo,Badajoz,Badajoz,Agricultura,1,,0.6074,0.126,0.1552,0.163,0.163,0.5,0.455
+38.90968693,-6.95771884,163.0,5.4,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.508,0.164,0.1552,0.116,0.116,0.5,0.611
+38.90920636,-6.95600283,168.0,8.6,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.2109,0.176,0.1552,0.651,0.651,0.5,0.406
+38.88936941,-6.94184966,169.0,9.85,Pozo,Badajoz,Badajoz,Abastecimiento y agricultura,1,,0.3342,0.04,0.2221,0.512,0.512,0.5,0.373
+38.89022847,-6.94304691,165.0,8.04,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1741,0.024,0.2221,0.279,0.279,0.5,0.313
+38.88884208,-6.94413603,167.0,7.99,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.2267,0.08,0.2221,0.395,0.395,0.5,0.313
+38.88785595,-6.94697742,165.0,9.12,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.3047,0.163,0.2221,0.302,0.302,0.5,0.283
+38.88634543,-6.9446,166.0,8.41,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.5984,0.136,0.2221,0.512,0.512,0.5,0.504
+38.88762139,-6.94286853,166.0,8.81,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.325,0.054,0.2221,0.558,0.558,0.5,0.396
+38.88555381,-6.94109523,168.0,7.51,Pozo,Badajoz,Badajoz,Abastecimiento y agricultura,1,,0.518,0.163,0.2221,0.326,0.326,0.5,0.52
+38.85316901,-6.94506044,177.0,6.24,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.2793,0.043,0.2221,0.512,0.512,0.5,0.277
+38.84720632,-6.94825085,197.0,30.0,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.305,0.178,0.1956,0.395,0.395,0.5,0.271
+38.90693205,-6.99262336,203.0,31.17,Pozo,Badajoz,Badajoz,Abastecimiento (que no sea núcleo urbano),1,,0.1517,0.164,0.1552,0.186,0.186,0.5,0.185
+38.85626624,-6.98993547,181.0,14.37,Pozo,Badajoz,Badajoz,Abastecimiento y agricultura,1,,0.1084,0.187,0.1552,0.419,0.419,0.5,0.256
+38.85556228,-7.00140947,171.0,11.31,Pozo,Badajoz,Badajoz,Abastecimiento y ganadería,1,,0.2252,0.183,0.1552,0.372,0.372,0.5,0.2
+38.84505507,-7.00819032,181.0,16.71,Pozo,Badajoz,Badajoz,Abastecimiento y agricultura,1,,0.4035,0.074,0.1422,0.279,0.279,0.5,0.311
+38.88626913,-6.94282686,166.0,7.36,Pozo,Badajoz,Badajoz,Agricultura,1,,0.659,0.144,0.2221,0.395,0.395,0.5,0.522

@@ -1,0 +1,563 @@
+######## main.py 275-312
+        return {"pozos": pozos, "n_total": len(pozos)}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+
+@app.post("/api/informe-pdf")
+async def informe_pdf(req: ParcelaRequest, user=Depends(get_current_user)):
+    """
+    Genera el informe PDF completo de la parcela: reutiliza EXACTAMENTE
+    los mismos cálculos que /analizar-parcela, /vaguadas, /punto-pozo-profundo
+    y la geología (mismas funciones, mismos parámetros), para que el PDF
+    explique con fidelidad lo que ya se ve en la app — no un cálculo aparte.
+    """
+    if not GEE_OK:
+        raise HTTPException(status_code=503, detail="Google Earth Engine no disponible")
+    try:
+        resultado_gee      = analizar_parcela_gee(req.coords)
+        resultado_vaguadas = await calcular_vaguadas(req.coords)
+        resultado_pozo     = await encontrar_punto_pozo_profundo(req.coords)
+
+        lats = [c[1] for c in req.coords]
+        lons = [c[0] for c in req.coords]
+        lat_c, lon_c = sum(lats) / len(lats), sum(lons) / len(lons)
+        geo = await obtener_geologia(lat_c, lon_c)
+        roca_es, _, estado_geo = clasificar_geologia(geo.get("lith", ""))
+        geologia = {
+            "roca": roca_es, "nombre_unidad": geo.get("name", "Desconocido"),
+            "descripcion": geo.get("descrip", "Sin descripción"), "estado": estado_geo,
+        }
+
+        pdf_bytes = generar_informe_pdf(req.coords, resultado_gee, resultado_vaguadas, geologia, resultado_pozo)
+        return StreamingResponse(
+            BytesIO(pdf_bytes),
+            media_type="application/pdf",
+            headers={"Content-Disposition": "attachment; filename=informe_agua_subterranea.pdf"},
+        )
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+######## services/pdf_service.py
+     1	"""
+     2	pdf_service.py  -  Genera el informe PDF del análisis de una parcela.
+     3	
+     4	Para cada resultado (punto óptimo, vaguadas, escorrentías, caudal,
+     5	geología) explica DOS cosas:
+     6	  1. Qué fuente de datos se ha consultado.
+     7	  2. Qué cálculo matemático se ha aplicado.
+     8	
+     9	Usa fpdf2 (pip install fpdf2)  -  librería pura Python, sin dependencias
+    10	de sistema (a diferencia de weasyprint/reportlab con Cairo/Pango), para
+    11	minimizar problemas de instalación en Windows.
+    12	"""
+    13	
+    14	from datetime import datetime
+    15	from io import BytesIO
+    16	from fpdf import FPDF
+    17	from fpdf.fonts import FontFace
+    18	
+    19	AZUL      = (30, 64, 175)
+    20	AZUL_CL   = (219, 234, 254)
+    21	GRIS      = (100, 100, 100)
+    22	NEGRO     = (20, 20, 20)
+    23	VERDE     = (21, 128, 61)
+    24	NARANJA   = (194, 120, 3)
+    25	ESTRELLA_NEGRA  = (17, 24, 39)     # mismo color que usa el mapa para BALSA
+    26	ESTRELLA_DORADA = (212, 175, 55)   # mismo color que usa el mapa para POZO
+    27	
+    28	
+    29	def _fmt(v, decimales=2, sufijo=""):
+    30	    """Formatea un número con seguridad, o ' - ' si es None."""
+    31	    if v is None:
+    32	        return " - "
+    33	    try:
+    34	        return f"{float(v):.{decimales}f}{sufijo}"
+    35	    except (TypeError, ValueError):
+    36	        return str(v)
+    37	
+    38	
+    39	def _limpiar_texto(texto) -> str:
+    40	    """
+    41	    Sustituye caracteres Unicode fuera de Latin-1 por equivalentes seguros.
+    42	    Necesario porque datos que vienen de fuentes externas (nombres
+    43	    geológicos del IGME/Macrostrat, etiquetas de ign_service.py) pueden
+    44	    traer rayas, comillas tipográficas u otros símbolos que la fuente
+    45	    básica de fpdf2 no soporta y harían fallar la generación del PDF.
+    46	    """
+    47	    if not isinstance(texto, str):
+    48	        texto = str(texto)
+    49	    reemplazos = {
+    50	        "—": " - ", "–": "-", "…": "...", "•": "-",
+    51	        "⚠": "[!]", "→": "->", "≥": ">=", "≤": "<=",
+    52	        "\u2018": "'", "\u2019": "'", "\u201c": '"', "\u201d": '"',
+    53	    }
+    54	    for viejo, nuevo in reemplazos.items():
+    55	        texto = texto.replace(viejo, nuevo)
+    56	    # Red de seguridad final: cualquier carácter que siga sin caber en
+    57	    # Latin-1 (emojis, símbolos raros) se elimina en vez de romper el PDF.
+    58	    return texto.encode("latin-1", "ignore").decode("latin-1")
+    59	
+    60	
+    61	class InformePDF(FPDF):
+    62	    def __init__(self):
+    63	        super().__init__(format="A4", unit="mm")
+    64	        self.set_auto_page_break(auto=True, margin=18)
+    65	        self.set_margins(16, 16, 16)
+    66	
+    67	    # Todo texto pasa por _limpiar_texto() automáticamente, venga de donde
+    68	    # venga — así no hay que acordarse de limpiar cada valor a mano.
+    69	    def cell(self, w=None, h=None, text="", *args, **kwargs):
+    70	        return super().cell(w, h, _limpiar_texto(text), *args, **kwargs)
+    71	
+    72	    def multi_cell(self, w, h=None, text="", *args, **kwargs):
+    73	        return super().multi_cell(w, h, _limpiar_texto(text), *args, **kwargs)
+    74	
+    75	    def header(self):
+    76	        if self.page_no() == 1:
+    77	            return
+    78	        self.set_font("Helvetica", "I", 8)
+    79	        self.set_text_color(*GRIS)
+    80	        self.cell(140, 8, "Buscador de Agua Subterránea  -  Informe de análisis", align="L")
+    81	        self.cell(38, 8, datetime.now().strftime("%d/%m/%Y"), align="R", new_x="LMARGIN", new_y="NEXT")
+    82	        self.set_draw_color(*GRIS)
+    83	        self.line(16, 18, 194, 18)
+    84	        self.ln(4)
+    85	
+    86	    def footer(self):
+    87	        self.set_y(-14)
+    88	        self.set_font("Helvetica", "I", 7)
+    89	        self.set_text_color(*GRIS)
+    90	        self.cell(0, 8, f"Página {self.page_no()}", align="C")
+    91	
+    92	    def titulo_seccion(self, num, texto):
+    93	        self.ln(3)
+    94	        self.set_font("Helvetica", "B", 13)
+    95	        self.set_text_color(*AZUL)
+    96	        self.cell(0, 9, f"{num}. {texto}", new_x="LMARGIN", new_y="NEXT")
+    97	        self.set_draw_color(*AZUL)
+    98	        self.set_line_width(0.6)
+    99	        self.line(16, self.get_y(), 194, self.get_y())
+   100	        self.set_line_width(0.2)
+   101	        self.ln(4)
+   102	        self.set_text_color(*NEGRO)
+   103	
+   104	    def subtitulo(self, texto):
+   105	        self.set_font("Helvetica", "B", 10.5)
+   106	        self.set_text_color(*NEGRO)
+   107	        self.cell(0, 7, texto, new_x="LMARGIN", new_y="NEXT")
+   108	        self.ln(1)
+   109	
+   110	    def indicador_estrella(self, color_rgb, etiqueta):
+   111	        """Cuadro de color + etiqueta -- sustituye al carácter ★ (fuera del
+   112	        rango Latin-1 que soporta la fuente básica) para distinguir en el
+   113	        PDF el punto de BALSA (negro) del de POZO (dorado), igual que en
+   114	        el mapa de la app."""
+   115	        self.set_fill_color(*color_rgb)
+   116	        self.set_draw_color(60, 60, 60)
+   117	        self.cell(6, 6, "", fill=True, border=1)
+   118	        self.set_font("Helvetica", "B", 11)
+   119	        self.set_text_color(*NEGRO)
+   120	        self.cell(0, 6, f"  {etiqueta}", new_x="LMARGIN", new_y="NEXT")
+   121	        self.ln(2)
+   122	
+   123	    def parrafo(self, texto):
+   124	        self.set_font("Helvetica", "", 9.5)
+   125	        self.set_text_color(*NEGRO)
+   126	        self.multi_cell(0, 5.2, texto)
+   127	        self.ln(1)
+   128	
+   129	    def dato_consultado(self, fuente, calculo):
+   130	        self.set_font("Helvetica", "B", 9)
+   131	        self.set_text_color(*AZUL)
+   132	        self.cell(0, 5.5, "Fuente:", new_x="LMARGIN", new_y="NEXT")
+   133	        self.set_font("Helvetica", "", 9)
+   134	        self.set_text_color(*NEGRO)
+   135	        self.multi_cell(0, 5.2, fuente)
+   136	        self.ln(1)
+   137	        self.set_font("Helvetica", "B", 9)
+   138	        self.set_text_color(*AZUL)
+   139	        self.cell(0, 5.5, "Cálculo:", new_x="LMARGIN", new_y="NEXT")
+   140	        self.set_font("Helvetica", "", 9)
+   141	        self.set_text_color(*NEGRO)
+   142	        self.multi_cell(0, 5.2, calculo)
+   143	        self.ln(3)
+   144	
+   145	    def aviso(self, texto):
+   146	        self.set_fill_color(*AZUL_CL)
+   147	        self.set_font("Helvetica", "I", 8.5)
+   148	        self.set_text_color(50, 50, 50)
+   149	        self.multi_cell(0, 5, "  [!] " + texto, fill=True)
+   150	        self.ln(2)
+   151	        self.set_text_color(*NEGRO)
+   152	
+   153	
+   154	def _portada(pdf: InformePDF, coords, fecha_txt):
+   155	    pdf.add_page()
+   156	    pdf.ln(30)
+   157	    pdf.set_font("Helvetica", "B", 24)
+   158	    pdf.set_text_color(*AZUL)
+   159	    pdf.cell(0, 14, "Informe de Análisis Hidrogeológico", align="C", new_x="LMARGIN", new_y="NEXT")
+   160	    pdf.set_font("Helvetica", "", 13)
+   161	    pdf.set_text_color(*GRIS)
+   162	    pdf.cell(0, 10, "Buscador de Agua Subterránea", align="C", new_x="LMARGIN", new_y="NEXT")
+   163	    pdf.ln(10)
+   164	
+   165	    lons = [c[0] for c in coords]
+   166	    lats = [c[1] for c in coords]
+   167	    lat_c, lon_c = sum(lats) / len(lats), sum(lons) / len(lons)
+   168	
+   169	    pdf.set_font("Helvetica", "", 10.5)
+   170	    pdf.set_text_color(*NEGRO)
+   171	    pdf.cell(0, 7, f"Fecha del informe: {fecha_txt}", align="C", new_x="LMARGIN", new_y="NEXT")
+   172	    pdf.cell(0, 7, f"Centro de la parcela: {lat_c:.6f}, {lon_c:.6f}", align="C", new_x="LMARGIN", new_y="NEXT")
+   173	    pdf.cell(0, 7, f"Vértices del polígono analizado: {len(coords)}", align="C", new_x="LMARGIN", new_y="NEXT")
+   174	    pdf.ln(14)
+   175	
+   176	    pdf.set_font("Helvetica", "I", 9)
+   177	    pdf.set_text_color(*GRIS)
+   178	    pdf.multi_cell(
+   179	        0, 5,
+   180	        "Este informe explica, para cada resultado mostrado en la aplicación, qué fuente de datos "
+   181	        "se ha consultado y qué cálculo matemático se ha aplicado  -  de forma que cada número pueda "
+   182	        "auditarse y no se tome como una \"caja negra\".",
+   183	        align="C",
+   184	    )
+   185	
+   186	
+   187	def _seccion_resumen(pdf: InformePDF, gee: dict, vaguadas: dict, geologia: dict):
+   188	    pdf.add_page()
+   189	    pdf.titulo_seccion(1, "Resumen del análisis")
+   190	    pdf.parrafo(
+   191	        "Tabla con los resultados principales. Cada uno se explica en detalle, con su fuente y su "
+   192	        "fórmula, en las secciones siguientes."
+   193	    )
+   194	
+   195	    filas = [
+   196	        ("Punto óptimo (lat, lon)", f"{gee.get('pozo_lat', 0):.6f}, {gee.get('pozo_lon', 0):.6f}"),
+   197	        ("Puntuación óptima (relativa a esta parcela)", _fmt(gee.get("pozo_score"), 1, " %")),
+   198	        ("Calidad de datos satelitales", gee.get("calidad", " - ")),
+   199	        ("NDVI en el punto óptimo", _fmt(gee.get("ndvi"), 3)),
+   200	        ("Humedad del suelo (ERA5) en el punto óptimo", _fmt(gee.get("humedad"), 4, " m³/m³")),
+   201	        ("Elevación en el punto óptimo", _fmt(gee.get("elevacion"), 1, " m")),
+   202	        ("Tramos de escorrentía/vaguada detectados", str(vaguadas.get("n_lineas", 0))),
+   203	        ("De ellos, vaguadas (cauce concentrado)", str(vaguadas.get("n_vaguadas", 0))),
+   204	        ("Acumulación máxima de flujo", _fmt(vaguadas.get("acum_maxima"), 1, " celdas")),
+   205	        ("Caudal máximo estimado (Método Racional)", _fmt(vaguadas.get("caudal_maximo_ls"), 2, " L/s")),
+   206	        ("Geología del subsuelo", geologia.get("nombre_unidad", "Desconocido")),
+   207	        ("Valoración geológica", geologia.get("estado", " - ")),
+   208	    ]
+   209	    with pdf.table(col_widths=(95, 83), text_align=("LEFT", "LEFT")) as table:
+   210	        row = table.row()
+   211	        row.cell("Resultado", style=FontFace(emphasis="BOLD"))
+   212	        row.cell("Valor", style=FontFace(emphasis="BOLD"))
+   213	        for etiqueta, valor in filas:
+   214	            row = table.row()
+   215	            row.cell(etiqueta)
+   216	            row.cell(str(valor))
+   217	
+   218	
+   219	def _seccion_punto_optimo(pdf: InformePDF, gee: dict):
+   220	    pdf.add_page()
+   221	    pdf.titulo_seccion(2, "Punto óptimo BALSA  -  metodología")
+   222	    pdf.indicador_estrella(ESTRELLA_NEGRA, "Estrella NEGRA en el mapa  =  este punto (agua superficial)")
+   223	    pdf.parrafo(
+   224	        "El punto óptimo de BALSA se calcula combinando cuatro capas de datos satelitales/climáticos "
+   225	        "en una puntuación ponderada, calculada con Google Earth Engine sobre TODA la superficie de la "
+   226	        "parcela, y tomando el punto donde esa puntuación es máxima. Busca dónde se concentra agua "
+   227	        "SUPERFICIAL o casi-superficial -- útil para balsa o zona de recarga, no para un pozo profundo."
+   228	    )
+   229	
+   230	    pdf.subtitulo("Variables consultadas")
+   231	    pdf.dato_consultado(
+   232	        "NDVI  -  Sentinel-2 (Copernicus), colección COPERNICUS/S2_SR_HARMONIZED, mediana de 2024 "
+   233	        "con filtro de nubosidad < 20%.",
+   234	        "NDVI = (B8 - B4) / (B8 + B4)   -   índice de vigor de la vegetación (infrarrojo cercano vs. rojo)."
+   235	    )
+   236	    pdf.dato_consultado(
+   237	        "Humedad del suelo  -  ERA5-Land (Copernicus/ECMWF), colección mensual, capa "
+   238	        "volumetric_soil_water_layer_1, media 2023-2024.",
+   239	        "Media aritmética mensual de humedad volumétrica del suelo (m³/m³) en el periodo."
+   240	    )
+   241	    pdf.dato_consultado(
+   242	        "Elevación y curvatura  -  SRTM 30 m (USGS/SRTMGL1_003).",
+   243	        "Curvatura = -Laplaciano(elevación)  -  mide si el terreno es cóncavo (acumula agua) o convexo."
+   244	    )
+   245	    pdf.subtitulo("Fórmula de la puntuación")
+   246	    pdf.parrafo(
+   247	        "Cada una de las 4 capas se normaliza entre 0 y 1 DENTRO de los límites de esta parcela "
+   248	        "(el valor más alto de la parcela = 1, el más bajo = 0). Después se combinan así:\n\n"
+   249	        "puntuación = NDVI_norm × 0.35  +  Humedad_norm × 0.30  +  (1 - Elevación_norm) × 0.20  "
+   250	        "+  Curvatura_norm × 0.15\n\n"
+   251	        "La elevación se invierte (1 - Elevación_norm) porque las zonas más bajas del relieve "
+   252	        "tienden a acumular agua. El resultado se suaviza con una mediana focal (radio 2 píxeles) "
+   253	        "para evitar puntos aislados por ruido del sensor, y se multiplica por 100 para expresarlo "
+   254	        "en porcentaje."
+   255	    )
+   256	    pdf.aviso(
+   257	        "Es una puntuación RELATIVA a esta parcela, no una probabilidad absoluta de encontrar agua. "
+   258	        "Un 33% en una parcela muy uniforme puede ser tan bueno como un 60% en otra muy heterogénea."
+   259	    )
+   260	    pdf.subtitulo("Resultado para esta parcela")
+   261	    pdf.parrafo(
+   262	        f"Punto óptimo BALSA: {gee.get('pozo_lat', 0):.6f}, {gee.get('pozo_lon', 0):.6f}   -   "
+   263	        f"Puntuación: {_fmt(gee.get('pozo_score'), 1)}%\n"
+   264	        f"Calidad de datos: {gee.get('calidad', ' - ')} ({gee.get('calidad_txt', ' - ')})\n"
+   265	        f"NDVI en el punto: {_fmt(gee.get('ndvi'), 3)}   ·   "
+   266	        f"Humedad: {_fmt(gee.get('humedad'), 4)} m³/m³   ·   "
+   267	        f"Elevación: {_fmt(gee.get('elevacion'), 1)} m"
+   268	    )
+   269	
+   270	
+   271	def _seccion_punto_pozo(pdf: InformePDF, pozo: dict):
+   272	    pdf.add_page()
+   273	    pdf.titulo_seccion(3, "Punto óptimo POZO  -  metodología")
+   274	    pdf.indicador_estrella(ESTRELLA_DORADA, "Estrella DORADA en el mapa  =  este punto (agua subterránea)")
+   275	
+   276	    if not pozo or not pozo.get("disponible"):
+   277	        pdf.parrafo(
+   278	            "No se ha podido calcular el punto óptimo de pozo para esta parcela "
+   279	            "(datos satelitales insuficientes en el periodo analizado)."
+   280	        )
+   281	        return
+   282	
+   283	    pdf.parrafo(
+   284	        "El punto óptimo de POZO usa señales distintas a las de la balsa: no busca dónde se acumula "
+   285	        "agua superficial, sino dónde hay indicios de agua subterránea PERSISTENTE, refinados con "
+   286	        "pozos reales conocidos y la geología real del punto."
+   287	    )
+   288	
+   289	    pdf.subtitulo("Variables consultadas")
+   290	    pdf.dato_consultado(
+   291	        "NDVI y NDMI de verano (jun-ago, 2022-2024)  -  Sentinel-2, mismo compuesto que el NDVI de "
+   292	        "balsa pero restringido a los meses secos, no la mediana anual.",
+   293	        "NDVI = (B8-B4)/(B8+B4)  -  vigor general. NDMI = (B8-B11)/(B8+B11)  -  contenido de agua de "
+   294	        "la vegetación, más específico que el NDVI para detectar raíces alcanzando agua profunda."
+   295	    )
+   296	    pdf.dato_consultado(
+   297	        "Anomalía térmica de verano  -  Landsat 8/9, banda ST_B10.",
+   298	        "Zonas más FRÍAS de lo normal en verano  -  la evapotranspiración de vegetación con acceso a "
+   299	        "agua subterránea enfría el suelo, señal física real."
+   300	    )
+   301	    pdf.dato_consultado(
+   302	        "Tipo de suelo  -  SoilGrids (ISRIC), % de arena en superficie (0-5cm).",
+   303	        "Más arena favorece la infiltración y por tanto la recarga del acuífero."
+   304	    )
+   305	    pdf.dato_consultado(
+   306	        "Pozos reales cercanos  -  inventario de puntos de agua del IGME (mismo servicio que el "
+   307	        "resto de la app), en un radio de 20 km.",
+   308	        "Los candidatos con satélite se reordenan dando hasta un 20% extra de puntuación a los más "
+   309	        "cercanos a un pozo real conocido -- la prueba más directa posible de acuífero explotable."
+   310	    )
+   311	    pdf.subtitulo("Fórmula de la puntuación satelital")
+   312	    pdf.parrafo(
+   313	        "NDVI_verano × 0.35  +  NDMI_verano × 0.30  +  Anomalía_térmica × 0.20  +  Arena_suelo × 0.15\n\n"
+   314	        "Después, el candidato con mejor puntuación satelital se compara con los siguientes: si su "
+   315	        "geología real (IGME GEODE) es desfavorable y otro candidato cercano en puntuación tiene mejor "
+   316	        "geología, se prefiere ese otro -- sentido geológico por encima del número frío del satélite."
+   317	    )
+   318	    pdf.aviso(
+   319	        "Sigue sin ser una medición directa del acuífero -- ningún dato remoto sustituye un sondeo "
+   320	        "eléctrico vertical o una perforación real antes de decidir una inversión."
+   321	    )
+   322	    pdf.subtitulo("Resultado para esta parcela")
+   323	    dist_txt = (
+   324	        f"{pozo.get('distancia_pozo_real_m'):.0f} m" if pozo.get("distancia_pozo_real_m") is not None
+   325	        else "sin pozos reales cercanos usados"
+   326	    )
+   327	    geo_p = pozo.get("geologia", {})
+   328	    pdf.parrafo(
+   329	        f"Punto óptimo POZO: {pozo.get('pozo_profundo_lat', 0):.6f}, {pozo.get('pozo_profundo_lon', 0):.6f}   -   "
+   330	        f"Puntuación final: {_fmt(pozo.get('pozo_profundo_score'), 1)}%\n"
+   331	        f"Puntuación solo satelital (antes de refinar): {_fmt(pozo.get('score_satelite'), 1)}%\n"
+   332	        f"Pozo real del IGME más cercano usado: {dist_txt}\n"
+   333	        f"Geología del punto: {geo_p.get('nombre_unidad', 'Desconocido')} ({geo_p.get('estado', ' - ')})"
+   334	    )
+   335	
+   336	
+   337	def _seccion_d8(pdf: InformePDF, vaguadas: dict):
+   338	    pdf.add_page()
+   339	    pdf.titulo_seccion(4, "Red de drenaje  -  vaguadas y escorrentías (algoritmo D8)")
+   340	    pdf.parrafo(
+   341	        "El algoritmo D8 es una técnica estándar de hidrología/SIG que simula por dónde correría el "
+   342	        "agua de lluvia según la forma del terreno  -  NO mide agua real, es un cálculo puramente "
+   343	        "topográfico."
+   344	    )
+   345	    pdf.dato_consultado(
+   346	        "Elevación  -  SRTM 90 m (OpenTopoData), malla de 20×20 puntos (400 en total) sobre el "
+   347	        "rectángulo que engloba la parcela.",
+   348	        "Se suaviza con un filtro de media móvil (tamaño 2) para reducir el ruido del sensor antes "
+   349	        "de calcular direcciones de flujo."
+   350	    )
+   351	    pdf.subtitulo("Paso 1  -  Dirección de flujo")
+   352	    pdf.parrafo(
+   353	        "Para cada una de las 400 celdas, se comparan sus 8 vecinas (N, NE, E, SE, S, SO, O, NO) y "
+   354	        "se elige aquella hacia la que la pendiente es más pronunciada cuesta abajo: "
+   355	        "pendiente = (altura_celda - altura_vecina) / distancia."
+   356	    )
+   357	    pdf.subtitulo("Paso 2  -  Acumulación de flujo")
+   358	    pdf.parrafo(
+   359	        "Se recorren las celdas de mayor a menor altura (orden topológico) y cada celda suma a su "
+   360	        "vecina de destino su propia acumulación  -  así, una celda con acumulación = 50 significa que "
+   361	        "50 celdas de la malla terminan drenando hacia ahí según el relieve."
+   362	    )
+   363	    pdf.subtitulo("Paso 3  -  Clasificación en escorrentía / vaguada")
+   364	    pdf.parrafo(
+   365	        f"Una celda se considera parte de la red de drenaje si su acumulación >= {8} (umbral "
+   366	        f"STREAM_THR). Dentro de la red de drenaje, se distingue:\n"
+   367	        f"  -  Escorrentía (flujo difuso): acumulación entre 8 y 24 celdas.\n"
+   368	        f"  -  Vaguada (cauce concentrado): acumulación >= 25 celdas (umbral VAGUADA_THR).\n"
+   369	        "Ambos umbrales son heurísticos, ajustables, no una norma oficial."
+   370	    )
+   371	    pdf.subtitulo("Paso 4  -  Caudal de cada tramo (Método Racional)")
+   372	    pdf.parrafo(
+   373	        "Q (m³/s) = C · I · A / 360,  con A en hectáreas e I en mm/h.\n"
+   374	        "El área de drenaje A se calcula multiplicando la acumulación de la celda por el área real "
+   375	        "que representa cada celda de la malla (calculada a partir del espaciado en metros). "
+   376	        "C = 0,30 (coeficiente de escorrentía típico de terreno agrícola/rural) e I = 20 mm/h "
+   377	        "(lluvia de referencia moderada-intensa) son valores de referencia ASUMIDOS, no medidos en "
+   378	        "esta parcela  -  el caudal resultante es orientativo."
+   379	    )
+   380	
+   381	    lineas = [f for f in vaguadas.get("geojson", {}).get("features", [])
+   382	              if f["properties"].get("tipo") == "linea_drenaje"]
+   383	    lineas_top = sorted(lineas, key=lambda f: f["properties"].get("caudal_ls", 0), reverse=True)[:15]
+   384	
+   385	    if lineas_top:
+   386	        pdf.subtitulo(f"Tramos con mayor caudal estimado (mostrando {len(lineas_top)} de {len(lineas)} totales)")
+   387	        with pdf.table(col_widths=(30, 30, 30, 22, 26, 40),
+   388	                        text_align=("CENTER", "CENTER", "CENTER", "CENTER", "CENTER", "LEFT")) as table:
+   389	            row = table.row()
+   390	            for h in ["Tipo", "Latitud", "Longitud", "Acum.", "Área (ha)", "Caudal (L/s)"]:
+   391	                row.cell(h, style=FontFace(emphasis="BOLD"))
+   392	            for f in lineas_top:
+   393	                p = f["properties"]
+   394	                lon0, lat0 = f["geometry"]["coordinates"][0]
+   395	                row = table.row()
+   396	                row.cell("Vaguada" if p["categoria"] == "vaguada" else "Escorrentía")
+   397	                row.cell(f"{lat0:.5f}")
+   398	                row.cell(f"{lon0:.5f}")
+   399	                row.cell(_fmt(p.get("acumulacion"), 1))
+   400	                row.cell(_fmt(p.get("area_ha"), 3))
+   401	                row.cell(_fmt(p.get("caudal_ls"), 2))
+   402	    else:
+   403	        pdf.parrafo("No se ha detectado ningún tramo de drenaje por encima del umbral en esta parcela.")
+   404	
+   405	    pdf.ln(2)
+   406	    pdf.subtitulo("Resumen de la red de drenaje")
+   407	    pdf.parrafo(
+   408	        f"Resolución de la malla: {vaguadas.get('resolucion', ' - ')}\n"
+   409	        f"Tramos totales: {vaguadas.get('n_lineas', 0)}  (de ellos, {vaguadas.get('n_vaguadas', 0)} son vaguadas)\n"
+   410	        f"Acumulación máxima registrada: {_fmt(vaguadas.get('acum_maxima'), 1)} celdas\n"
+   411	        f"Caudal máximo estimado en la parcela: {_fmt(vaguadas.get('caudal_maximo_ls'), 2)} L/s"
+   412	    )
+   413	
+   414	
+   415	def _seccion_puntos_optimos(pdf: InformePDF, vaguadas: dict):
+   416	    pdf.add_page()
+   417	    pdf.titulo_seccion(5, "Puntos óptimos para balsa o pozo")
+   418	    pdf.parrafo(
+   419	        "De las 400 celdas de la malla, se seleccionan las de mayor acumulación de flujo  -  son los "
+   420	        "puntos donde el relieve concentra más agua de escorrentía, y por tanto los mejores "
+   421	        "candidatos para una balsa de recogida o para situar un pozo."
+   422	    )
+   423	    pdf.dato_consultado(
+   424	        "La misma malla de acumulación de flujo D8 calculada en la sección anterior.",
+   425	        "Se ordenan las 400 celdas de mayor a menor acumulación y se toman hasta 7, exigiendo que "
+   426	        "cada una esté separada de las ya elegidas al menos 2 celdas (para no agrupar varios puntos "
+   427	        "prácticamente en el mismo sitio)."
+   428	    )
+   429	
+   430	    puntos = [f for f in vaguadas.get("geojson", {}).get("features", [])
+   431	              if f["properties"].get("tipo") == "punto_acumulacion"]
+   432	    puntos = sorted(puntos, key=lambda f: f["properties"].get("acumulacion", 0), reverse=True)
+   433	
+   434	    if puntos:
+   435	        with pdf.table(
+   436	            col_widths=(14, 40, 40, 30, 54),
+   437	            text_align=("CENTER", "CENTER", "CENTER", "CENTER", "LEFT"),
+   438	        ) as table:
+   439	            row = table.row()
+   440	            for h in ["#", "Latitud", "Longitud", "Acumulación", "Interpretación"]:
+   441	                row.cell(h, style=FontFace(emphasis="BOLD"))
+   442	            for i, f in enumerate(puntos, start=1):
+   443	                p = f["properties"]
+   444	                lon0, lat0 = f["geometry"]["coordinates"]
+   445	                row = table.row()
+   446	                row.cell(str(i))
+   447	                row.cell(f"{lat0:.6f}")
+   448	                row.cell(f"{lon0:.6f}")
+   449	                row.cell(_fmt(p.get("acumulacion"), 1))
+   450	                etiqueta = p.get("etiqueta", "").replace("\U0001F4A7 ", "")
+   451	                row.cell(etiqueta)
+   452	    else:
+   453	        pdf.parrafo("No se ha detectado ningún punto de acumulación significativo en esta parcela.")
+   454	
+   455	
+   456	def _seccion_geologia(pdf: InformePDF, geologia: dict):
+   457	    pdf.add_page()
+   458	    pdf.titulo_seccion(6, "Geología del subsuelo")
+   459	    pdf.dato_consultado(
+   460	        "IGME  -  Mapa Geológico Continuo de España (GEODE), escala 1:50.000. Servicio oficial "
+   461	        "ArcGIS REST del Instituto Geológico y Minero de España, capa \"Recintos geología\", "
+   462	        "consultada en el centroide de la parcela. Si no hay cobertura en el punto, se usa "
+   463	        "Macrostrat (base de datos geológica global) como respaldo.",
+   464	        "Consulta espacial directa (sin cálculo numérico): se identifica en qué recinto geológico "
+   465	        "cartografiado cae el punto, y se clasifica el tipo de roca por palabras clave de su "
+   466	        "litología (caliza/arenisca/aluvial -> favorable; granito/esquisto/pizarra -> desfavorable; "
+   467	        "el resto -> intermedio) para estimar su aptitud como acuífero."
+   468	    )
+   469	    pdf.subtitulo("Resultado para esta parcela")
+   470	    pdf.parrafo(
+   471	        f"Unidad geológica: {geologia.get('nombre_unidad', 'Desconocido')}\n"
+   472	        f"Tipo de roca: {geologia.get('roca', 'Desconocido')}\n"
+   473	        f"Valoración: {geologia.get('estado', ' - ')}\n"
+   474	        f"Descripción: {geologia.get('descripcion', 'Sin descripción')}"
+   475	    )
+   476	
+   477	
+   478	def _seccion_fuentes(pdf: InformePDF):
+   479	    pdf.add_page()
+   480	    pdf.titulo_seccion(7, "Fuentes de datos consultadas  -  resumen")
+   481	    fuentes = [
+   482	        ("Sentinel-2 (Copernicus/ESA)", "NDVI  -  vigor de la vegetación, resolución 10 m"),
+   483	        ("ERA5-Land (Copernicus/ECMWF)", "Humedad volumétrica del suelo, resolución ~9 km"),
+   484	        ("SRTM (NASA/USGS)", "Elevación del terreno, resolución 30-90 m"),
+   485	        ("IGME  -  GEODE", "Mapa geológico continuo de España, escala 1:50.000"),
+   486	        ("Macrostrat", "Base de datos geológica global (respaldo fuera de cobertura IGME)"),
+   487	        ("Algoritmo D8 propio", "Dirección y acumulación de flujo hídrico sobre el relieve"),
+   488	        ("Método Racional (hidrología)", "Estimación de caudal a partir del área de drenaje"),
+   489	    ]
+   490	    with pdf.table(col_widths=(60, 118), text_align=("LEFT", "LEFT")) as table:
+   491	        row = table.row()
+   492	        row.cell("Fuente", style=FontFace(emphasis="BOLD"))
+   493	        row.cell("Qué aporta", style=FontFace(emphasis="BOLD"))
+   494	        for nombre, uso in fuentes:
+   495	            row = table.row()
+   496	            row.cell(nombre)
+   497	            row.cell(uso)
+   498	
+   499	    pdf.ln(4)
+   500	    pdf.aviso(
+   501	        "Este informe explica el cálculo con datos remotos/satelitales, disponible sin coste ni "
+   502	        "desplazamiento. Ningún método remoto sustituye una prospección física en campo (sondeo "
+   503	        "eléctrico vertical, perforación con control geológico y ensayo de bombeo) antes de decidir "
+   504	        "una inversión en un pozo."
+   505	    )
+   506	
+   507	
+   508	def generar_informe_pdf(coords: list, resultado_gee: dict, resultado_vaguadas: dict, geologia: dict, resultado_pozo: dict = None) -> bytes:
+   509	    """Genera el informe completo y devuelve los bytes del PDF."""
+   510	    pdf = InformePDF()
+   511	    fecha_txt = datetime.now().strftime("%d/%m/%Y %H:%M")
+   512	
+   513	    _portada(pdf, coords, fecha_txt)
+   514	    _seccion_resumen(pdf, resultado_gee, resultado_vaguadas, geologia)
+   515	    _seccion_punto_optimo(pdf, resultado_gee)
+   516	    _seccion_punto_pozo(pdf, resultado_pozo)
+   517	    _seccion_d8(pdf, resultado_vaguadas)
+   518	    _seccion_puntos_optimos(pdf, resultado_vaguadas)
+   519	    _seccion_geologia(pdf, geologia)
+   520	    _seccion_fuentes(pdf)
+   521	
+   522	    return bytes(pdf.output())

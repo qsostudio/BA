@@ -1,0 +1,101 @@
+Filas de partida: 3998
+  Geología: 0/3998
+  Geología: 100/3998
+  Geología: 200/3998
+  Geología: 300/3998
+  Geología: 400/3998
+  Geología: 500/3998
+  Geología: 600/3998
+  Geología: 700/3998
+  Geología: 800/3998
+  Geología: 900/3998
+  Geología: 1000/3998
+  Geología: 1100/3998
+  Geología: 1200/3998
+  Geología: 1300/3998
+  Geología: 1400/3998
+  Geología: 1500/3998
+  Geología: 1600/3998
+  Geología: 1700/3998
+  Geología: 1800/3998
+  Geología: 1900/3998
+  Geología: 2000/3998
+  Geología: 2100/3998
+  Geología: 2200/3998
+  Geología: 2300/3998
+  Geología: 2400/3998
+  Geología: 2500/3998
+  Geología: 2600/3998
+  Geología: 2700/3998
+  Geología: 2800/3998
+  Geología: 2900/3998
+  Geología: 3000/3998
+  Geología: 3100/3998
+  Geología: 3200/3998
+  Geología: 3300/3998
+  Geología: 3400/3998
+  Geología: 3500/3998
+  Geología: 3600/3998
+  Geología: 3700/3998
+  Geología: 3800/3998
+  Geología: 3900/3998
+Guardado: data/pozos_andalucia_enriquecido.csv (profundidad_idw_vecinos se calcula dentro de entrenar())
+[FILTRO] Filas totales: 3998 | con profundidad: 2936
+[FILTRO] Excluidos (> 200 m): 119 (4.1%)
+[FILTRO] Guardado: data/pozos_andalucia_entrenamiento_filtrado.csv (3879 filas)
+[MODELO] 1480 pozos con profundidad real conocida y features completas, de 3879 totales
+[MODELO] Features: ['ndvi_verano', 'ndvi_estabilidad', 'humedad', 'elevacion', 'curvatura', 'acumulacion_flujo', 'lst_anomalia', 'geologia_score', 'profundidad_idw_vecinos', 'cluster_hidrogeologico']
+[MODELO] Profundidad real — media: 37.0 m | mín: 0.8 | máx: 200.0
+[MODELO] Grupos espaciales: 6 (por provincia)
+  [Bloque externo 1/6] RMSE=30.8 m | %error<5m=26% | hiperparámetros: {'modelo__learning_rate': 0.03, 'modelo__max_depth': 3, 'modelo__n_estimators': 150}
+  [Bloque externo 2/6] RMSE=55.5 m | %error<5m=4% | hiperparámetros: {'modelo__learning_rate': 0.03, 'modelo__max_depth': 3, 'modelo__n_estimators': 150}
+  [Bloque externo 3/6] RMSE=43.9 m | %error<5m=9% | hiperparámetros: {'modelo__learning_rate': 0.03, 'modelo__max_depth': 3, 'modelo__n_estimators': 150}
+  [Bloque externo 4/6] RMSE=65.9 m | %error<5m=5% | hiperparámetros: {'modelo__learning_rate': 0.03, 'modelo__max_depth': 3, 'modelo__n_estimators': 150}
+  [Bloque externo 5/6] RMSE=42.9 m | %error<5m=5% | hiperparámetros: {'modelo__learning_rate': 0.03, 'modelo__max_depth': 3, 'modelo__n_estimators': 150}
+  [Bloque externo 6/6] RMSE=33.6 m | %error<5m=28% | hiperparámetros: {'modelo__learning_rate': 0.03, 'modelo__max_depth': 3, 'modelo__n_estimators': 150}
+[MODELO] R²=-0.188 | RMSE=45.41 m | %error<5m=12.8%
+
+=== RESULTADO FINAL (Gradient Boosting, nested CV, IDW por fold) ===
+{
+  "n_pozos_entrenamiento": 1480,
+  "tipo_modelo": "Regresión de profundidad real del acuífero (m)",
+  "mejores_hiperparametros": {
+    "modelo__learning_rate": 0.03,
+    "modelo__max_depth": 3,
+    "modelo__n_estimators": 150
+  },
+  "metricas_cv": {
+    "tipo_validacion": "Nested CV con bloques espaciales, IDW recalculado por fold (no aleatoria)",
+    "n_bloques_externos": 6,
+    "r2_medio": -0.188,
+    "r2_std": 0.253,
+    "rmse_medio": 45.41,
+    "rmse_std": 12.14,
+    "pct_error_menor_5m": 12.8,
+    "pct_error_menor_20pct": 10.1,
+    "acuerdo_categorias": 0.288
+  },
+  "importancia_variables": {
+    "Profundidad IDW de pozos vecinos (m)": 0.6334,
+    "Elevación del terreno (m)": 0.109,
+    "Humedad del suelo ERA5": 0.0618,
+    "Anomalía térmica veraniega (Landsat)": 0.0506,
+    "Estabilidad NDVI en verano": 0.043,
+    "Acumulación de flujo D8": 0.0404,
+    "NDVI medio en verano (Sentinel-2)": 0.029,
+    "Curvatura topográfica D8": 0.0244,
+    "Geología favorable (IGME)": 0.0049,
+    "Arquetipo hidrogeológico (clúster)": 0.0034
+  },
+  "interpretacion": {
+    "calidad_modelo": "Limitado",
+    "descripcion": "En validación espacial el modelo no mejora a predecir siempre la profundidad media; úsalo solo como referencia secundaria junto a los pozos vecinos reales.",
+    "r2_texto": "R² = -0.19 en validación espacial: es negativo, es decir, en zonas no vistas el modelo predice peor que usar siempre la profundidad media.",
+    "rmse_texto": "El error medio de predicción es 45.4 m.",
+    "acuerdo_texto": "Acierta la categoría de profundidad en el 29% de los casos (compárese con el azar: 1/N con N categorías).",
+    "precision_texto": "El modelo clasifica correctamente la categoría de profundidad en el 29% de los pozos.",
+    "recall_texto": "Error medio de estimación de profundidad: 45.4 metros.",
+    "metrica_negocio_texto": "En el 13% de los pozos, el error de profundidad es menor de 5 m.",
+    "metrica_negocio_relativa_texto": "En el 10% de los pozos, el error relativo de profundidad es menor del 20%."
+  }
+}
