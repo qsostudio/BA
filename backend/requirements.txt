@@ -7,3 +7,11 @@ earthengine-api
 google-auth
 numpy
 scipy
+pandas
+scikit-learn==1.9.1
+joblib
+sqlalchemy
+bcrypt
+python-jose[cryptography]
+python-multipart
+fpdf2
